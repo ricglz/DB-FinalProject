@@ -104,7 +104,7 @@ CREATE TABLE HA_Question (
   anxType CHAR(1) NOT NULL,
   description VARCHAR(500),
 
-  PRIMARY KEY(qId),
+  PRIMARY KEY(qId)
 )
 
 CREATE TABLE HA_Answer (
@@ -119,16 +119,23 @@ CREATE TABLE HA_Answer (
 
 ----------------------------------------------------------------------
 
-INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate )
+INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate)
 VALUES ('John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05')
 
-INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate )
+INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate)
 VALUES ('Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10')
 
-INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate ) 
+INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate) 
 VALUES ('Hugh', 'Jackman', 'M', '5412345678', '2nd Street', '72100', 'NL', 'San Pedro', '1987-12-04')
 
-INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate ) 
+INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate) 
 VALUES ('Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25')
 
 ----------------------------------------------------------------------
+
+INSERT INTO Medicament (medName) VALUES ('Celexa')
+INSERT INTO Medicament (medName) VALUES ('Lexapro')
+INSERT INTO Medicament (medName) VALUES ('Paxil')
+INSERT INTO Medicament (medName) VALUES ('Pexeva')
+INSERT INTO Medicament (medName) VALUES ('Prozac')
+INSERT INTO Medicament (medName) VALUES ('Adapin')
