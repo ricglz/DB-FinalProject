@@ -133,6 +133,78 @@ VALUES ('Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San
 
 ----------------------------------------------------------------------
 
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Estado de �nimo ansioso.
+Preocupaciones, anticipaci�n de lo peor, aprensi�n
+(anticipaci�n temerosa), irritabilidad')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Tensi�n.
+Sensaci�n de tensi�n, imposibilidad de relajarse,
+reacciones con sobresalto, llanto f�cil, temblores,
+sensaci�n de inquietud.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Temores.
+A la oscuridad, a los desconocidos, a quedarse solo, a los
+animales grandes, al tr�fico, a las multitudes.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Insomnio.
+Dificultad para dormirse, sue�o interrumpido, sue�o
+insatisfactorio y cansancio al despertar.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Intelectual (cognitivo)
+Dificultad para concentrarse, mala memoria.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Estado de �nimo deprimido.
+P�rdida de inter�s, insatisfacci�n en las diversiones,
+depresi�n, despertar prematuro, cambios de humor
+durante el d�a.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'S�ntomas som�ticos generales (musculares)
+Dolores y molestias musculares, rigidez muscular,
+contracciones musculares, sacudidas cl�nicas, crujir de
+dientes, voz temblorosa.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'S�ntomas som�ticos generales (sensoriales)
+Zumbidos de o�dos, visi�n borrosa, sofocos y escalofr�os,
+sensaci�n de debilidad, sensaci�n de hormigueo.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'S�ntomas cardiovasculares.
+Taquicardia, palpitaciones, dolor en el pecho, latidos
+vasculares, sensaci�n de desmayo, extras�stole.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'S�ntomas respiratorios.
+Opresi�n o constricci�n en el pecho, sensaci�n de ahogo,
+suspiros, disnea.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'S�ntomas gastrointestinales.
+Dificultad para tragar, gases, dispepsia: dolor antes y
+despu�s de comer, sensaci�n de ardor, sensaci�n de
+est�mago lleno, v�mitos acuosos, v�mitos, sensaci�n de
+est�mago vac�o, digesti�n lenta, borborigmos (ruido
+intestinal), diarrea, p�rdida de peso, estre�imiento.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'S�ntomas genitourinarios.
+Micci�n frecuente, micci�n urgente, amenorrea,
+menorragia, aparici�n de la frigidez, eyaculaci�n precoz,
+ausencia de erecci�n, impotencia.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'S�ntomas aut�nomos.
+Boca seca, rubor, palidez, tendencia a sudar, v�rtigos,
+cefaleas de tensi�n, piloerecci�n (pelos de punta)')
+
 INSERT INTO Medicament (medName) VALUES ('Celexa')
 INSERT INTO Medicament (medName) VALUES ('Lexapro')
 INSERT INTO Medicament (medName) VALUES ('Paxil')
@@ -149,4 +221,3 @@ INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  6)
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  1)
 
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  2)
-
