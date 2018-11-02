@@ -1,16 +1,14 @@
 CREATE TABLE Patient (
   patientId INT NOT NULL IDENTITY(1,1),
-  sex CHAR(1),
-  telephone CHAR(10),
+  fName VARCHAR(50) NOT NULL,
+  lName VARCHAR(50) NOT NULL,
+  sex CHAR(1) NOT NULL,
+  telephone CHAR(10) NOT NULL,
   street VARCHAR(50),
   zip VARCHAR(8),
   state VARCHAR(8),
-  city VARCHAR(8),
-  birthDate DATETIME,
-  fName VARCHAR(50),
-  lName VARCHAR(50),
-  religion VARCHAR(8),
-  civilStatus VARCHAR(8),
+  city VARCHAR(20),
+  birthDate DATE NOT NULL,
 
   PRIMARY KEY(patientId)
 )
@@ -19,16 +17,18 @@ CREATE TABLE Patient (
 
 CREATE TABLE Visit (
   visitId INT NOT NULL IDENTITY(1,1),
-  vDate DATETIME,
-  motive VARCHAR(50),
+  patientId INT NOT NULL,
+  vDate DATETIME NOT NULL,
+  motive VARCHAR(50) NOT NULL,
   referral VARCHAR(50),
 
   PRIMARY KEY(visitId)
+  FOREIGN KEY(patientId) REFERENCES Patient(patientId)
 )
 
 CREATE TABLE Medicament (
   medId INT NOT NULL IDENTITY(1,1),
-  medName VARCHAR(50),
+  medName VARCHAR(50) NOT NULL,
 
   PRIMARY KEY(medId)
 )
@@ -66,10 +66,10 @@ CREATE TABLE Medicament_visit (
 
 CREATE TABLE HD_Test_Res (
   entryId INT NOT NULL IDENTITY(1,1),
-  patientId INT NOT NULL,
+  visitId INT NOT NULL,
 
   PRIMARY KEY(entryId),
-  FOREIGN KEY(patientId) REFERENCES Patient(patientId)
+  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
 )
 
 CREATE TABLE HD_Question (
@@ -95,10 +95,10 @@ CREATE TABLE HD_Answer (
 
 CREATE TABLE HA_Test_Res (
   entryId INT NOT NULL IDENTITY(1,1),
-  patientId INT NOT NULL,
+  visitId INT NOT NULL,
 
   PRIMARY KEY(entryId),
-  FOREIGN KEY(patientId) REFERENCES Patient(patientId)
+  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
 )
 
 CREATE TABLE HA_Question (
@@ -120,5 +120,19 @@ CREATE TABLE HA_Answer (
   FOREIGN KEY(entryId) REFERENCES HA_Test_Res(entryId),
   FOREIGN KEY(qId) REFERENCES HA_Question(qId)
 )
+
+----------------------------------------------------------------------
+
+INSERT INTO Patient VALUES (
+  'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05')
+
+INSERT INTO Patient VALUES (
+  'Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10')
+
+INSERT INTO Patient VALUES (
+  'Hugh', 'Jackman', 'M', '5412345678', '2nd Street', '72100', 'NL', 'San Pedro', '1987-12-04')
+
+INSERT INTO Patient VALUES (
+  'Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25')
 
 ----------------------------------------------------------------------
