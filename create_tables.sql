@@ -132,3 +132,74 @@ INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, bi
 VALUES ('Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25')
 
 ----------------------------------------------------------------------
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Estado de ánimo ansioso.
+Preocupaciones, anticipación de lo peor, aprensión
+(anticipación temerosa), irritabilidad')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Tensión.
+Sensación de tensión, imposibilidad de relajarse,
+reacciones con sobresalto, llanto fácil, temblores,
+sensación de inquietud.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Temores.
+A la oscuridad, a los desconocidos, a quedarse solo, a los
+animales grandes, al tráfico, a las multitudes.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Insomnio.
+Dificultad para dormirse, sueño interrumpido, sueño
+insatisfactorio y cansancio al despertar.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Intelectual (cognitivo)
+Dificultad para concentrarse, mala memoria.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Estado de ánimo deprimido.
+Pérdida de interés, insatisfacción en las diversiones,
+depresión, despertar prematuro, cambios de humor
+durante el día.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'Síntomas somáticos generales (musculares)
+Dolores y molestias musculares, rigidez muscular,
+contracciones musculares, sacudidas clónicas, crujir de
+dientes, voz temblorosa.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'Síntomas somáticos generales (sensoriales)
+Zumbidos de oídos, visión borrosa, sofocos y escalofríos,
+sensación de debilidad, sensación de hormigueo.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'Síntomas cardiovasculares.
+Taquicardia, palpitaciones, dolor en el pecho, latidos
+vasculares, sensación de desmayo, extrasístole.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'Síntomas respiratorios.
+Opresión o constricción en el pecho, sensación de ahogo,
+suspiros, disnea.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'Síntomas gastrointestinales.
+Dificultad para tragar, gases, dispepsia: dolor antes y
+después de comer, sensación de ardor, sensación de
+estómago lleno, vómitos acuosos, vómitos, sensación de
+estómago vacío, digestión lenta, borborigmos (ruido
+intestinal), diarrea, pérdida de peso, estreñimiento.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'Síntomas genitourinarios.
+Micción frecuente, micción urgente, amenorrea,
+menorragia, aparición de la frigidez, eyaculación precoz,
+ausencia de erección, impotencia.')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('S', 'Síntomas autónomos.
+Boca seca, rubor, palidez, tendencia a sudar, vértigos,
+cefaleas de tensión, piloerección (pelos de punta)')
