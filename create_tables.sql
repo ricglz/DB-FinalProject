@@ -1,4 +1,4 @@
-CREATE TABLE patient (
+CREATE TABLE Patient (
   patientId INT NOT NULL IDENTITY(1,1),
   sex CHAR(1),
   telephone CHAR(10),
@@ -15,7 +15,9 @@ CREATE TABLE patient (
   PRIMARY KEY(patientId)
 )
 
-CREATE TABLE visit (
+----------------------------------------------------------------------
+
+CREATE TABLE Visit (
   visitId INT NOT NULL IDENTITY(1,1),
   vDate DATETIME,
   motive VARCHAR(50),
@@ -24,14 +26,14 @@ CREATE TABLE visit (
   PRIMARY KEY(visitId)
 )
 
-CREATE TABLE medicament (
+CREATE TABLE Medicament (
   medId INT NOT NULL IDENTITY(1,1),
   medName VARCHAR(50)
 
   PRIMARY KEY(medId)
 )
 
-CREATE TABLE diagnosis (
+CREATE TABLE Diagnosis (
   dCode INT NOT NULL IDENTITY(1,1),
   isPrimary BIT NOT NULL,
   sicknessDegree INT NOT NULL
@@ -39,14 +41,16 @@ CREATE TABLE diagnosis (
   PRIMARY KEY(dCode)
 )
 
-CREATE TABLE diagnosis_visit (
+CREATE TABLE Diagnosis_visit (
   visitId INT NOT NULL,
   dCode INT NOT NULL,
 
   PRIMARY KEY(visitId, dCode)
+  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
+  FOREIGN KEY(dCode) REFERENCES Diagnosis(dCode)
 )
 
-CREATE TABLE medicament_visit (
+CREATE TABLE Medicament_visit (
   visitId INT NOT NULL,
   medId INT NOT NULL,
   dateBegin DATETIME,
@@ -54,4 +58,67 @@ CREATE TABLE medicament_visit (
   dateEnd DATETIME
 
   PRIMARY KEY(visitId, medId)
+  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
+  FOREIGN KEY(medId) REFERENCES Medicament(medId)
 )
+
+----------------------------------------------------------------------
+
+CREATE TABLE HD_Test_Res (
+  entryId INT NOT NULL IDENTITY(1,1)
+  patientId INT NOT NULL,
+
+  PRIMARY KEY(entryId, patientId),
+  FOREIGN KEY(patientId) REFERENCES Patient(patientId)
+)
+
+CREATE TABLE HD_Question (
+  qId INT NOT NULL IDENTITY(1,1),
+  entryId INT NOT NULL,
+  description VARCHAR(500)
+
+  PRIMARY KEY(qId)
+  FOREIGN KEY(entryId) REFERENCES HD_Test_Res(entryId)
+)
+
+CREATE TABLE HD_Answer (
+  entryId INT NOT NULL,
+  qId INT NOT NULL,
+  value INT NOT NULL,
+
+  PRIMARY KEY(entryId, qId)
+  FOREIGN KEY(entryId) REFERENCES HD_Test_Res(entryId)
+  FOREIGN KEY(qId) REFERENCES HD_Question(qId)
+)
+
+----------------------------------------------------------------------
+
+CREATE TABLE HA_Test_Res (
+  entryId INT NOT NULL IDENTITY(1,1)
+  patientId INT NOT NULL,
+
+  PRIMARY KEY(entryId, patientId),
+  FOREIGN KEY(patientId) REFERENCES Patient(patientId)
+)
+
+CREATE TABLE HA_Question (
+  qId INT NOT NULL IDENTITY(1,1),
+  entryId INT NOT NULL,
+  anxType CHAR(1) NOT NULL,
+  description VARCHAR(500)
+
+  PRIMARY KEY(qId)
+  FOREIGN KEY(entryId) REFERENCES HA_Test_Res(entryId)
+)
+
+CREATE TABLE HA_Answer (
+  entryId INT NOT NULL,
+  qId INT NOT NULL,
+  value INT NOT NULL,
+
+  PRIMARY KEY(entryId, qId)
+  FOREIGN KEY(entryId) REFERENCES HA_Test_Res(entryId)
+  FOREIGN KEY(qId) REFERENCES HA_Question(qId)
+)
+
+----------------------------------------------------------------------
