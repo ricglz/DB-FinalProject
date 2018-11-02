@@ -74,11 +74,9 @@ CREATE TABLE HD_Test_Res (
 
 CREATE TABLE HD_Question (
   qId INT NOT NULL IDENTITY(1,1),
-  entryId INT NOT NULL,
   description VARCHAR(500),
 
-  PRIMARY KEY(qId),
-  FOREIGN KEY(entryId) REFERENCES HD_Test_Res(entryId)
+  PRIMARY KEY(qId)
 )
 
 CREATE TABLE HD_Answer (
@@ -103,12 +101,10 @@ CREATE TABLE HA_Test_Res (
 
 CREATE TABLE HA_Question (
   qId INT NOT NULL IDENTITY(1,1),
-  entryId INT NOT NULL,
   anxType CHAR(1) NOT NULL,
   description VARCHAR(500),
 
   PRIMARY KEY(qId),
-  FOREIGN KEY(entryId) REFERENCES HA_Test_Res(entryId)
 )
 
 CREATE TABLE HA_Answer (
