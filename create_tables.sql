@@ -149,45 +149,45 @@ INSERT INTO HD_Question ( description )
 VALUES ('Insomnio intermedio')
 
 INSERT INTO HD_Question ( description ) 
-VALUES ('Insomnio tardío')
+VALUES ('Insomnio tardio')
 
 INSERT INTO HD_Question ( description ) 
 VALUES ('Trabajo y actividades')
 
 INSERT INTO HD_Question ( description ) 
-VALUES ('Inhibición psicomotora (lentitud de pensamiento y lenguaje, facultad de
-concentración disminuida, disminución de la actividad motora)')
+VALUES ('Inhibicion psicomotora (lentitud de pensamiento y lenguaje, facultad de
+concentracion disminuida, disminucion de la actividad motora)')
 
 INSERT INTO HD_Question ( description ) 
-VALUES ('Ansiedad psíquica')
+VALUES ('Ansiedad psiquica')
 
 INSERT INTO HD_Question ( description ) 
-VALUES ('Ansiedad somática (signos físicos de ansiedad: gastrointestinales: sequedad de
-boca, diarrea, eructos, indigestión, etc; cardiovasculares: palpitaciones, cefaleas;
-respiratorios: hiperventilación, suspiros; frecuencia de micción incrementada;
-transpiración)')
+VALUES ('Ansiedad somatica (signos fisicos de ansiedad: gastrointestinales: sequedad de
+boca, diarrea, eructos, indigestion, etc; cardiovasculares: palpitaciones, cefaleas;
+respiratorios: hiperventilacion, suspiros; frecuencia de miccion incrementada;
+transpiracion)')
 
 ----------------------------------------------------------------------
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('P', 'Estado de �nimo ansioso.
-Preocupaciones, anticipaci�n de lo peor, aprensi�n
-(anticipaci�n temerosa), irritabilidad')
+VALUES ('P', 'Estado de animo ansioso.
+Preocupaciones, anticipacion de lo peor, aprensi�n
+(anticipacion temerosa), irritabilidad')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('P', 'Tensi�n.
-Sensaci�n de tensi�n, imposibilidad de relajarse,
-reacciones con sobresalto, llanto f�cil, temblores,
-sensaci�n de inquietud.')
+VALUES ('P', 'Tension.
+Sensacipn de tension, imposibilidad de relajarse,
+reacciones con sobresalto, llanto facil, temblores,
+sensacion de inquietud.')
 
 INSERT INTO HA_Question ( anxType, description )
 VALUES ('P', 'Temores.
 A la oscuridad, a los desconocidos, a quedarse solo, a los
-animales grandes, al tr�fico, a las multitudes.')
+animales grandes, al trafico, a las multitudes.')
 
 INSERT INTO HA_Question ( anxType, description )
 VALUES ('P', 'Insomnio.
-Dificultad para dormirse, sue�o interrumpido, sue�o
+Dificultad para dormirse, sueño interrumpido, sueño
 insatisfactorio y cansancio al despertar.')
 
 INSERT INTO HA_Question ( anxType, description )
@@ -195,50 +195,50 @@ VALUES ('P', 'Intelectual (cognitivo)
 Dificultad para concentrarse, mala memoria.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('P', 'Estado de �nimo deprimido.
-P�rdida de inter�s, insatisfacci�n en las diversiones,
-depresi�n, despertar prematuro, cambios de humor
-durante el d�a.')
+VALUES ('P', 'Estado de animo deprimido.
+Perdida de interes, insatisfaccion en las diversiones,
+depresion, despertar prematuro, cambios de humor
+durante el dia.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'S�ntomas som�ticos generales (musculares)
+VALUES ('S', 'Sintomas somaticos generales (musculares)
 Dolores y molestias musculares, rigidez muscular,
-contracciones musculares, sacudidas cl�nicas, crujir de
+contracciones musculares, sacudidas clonicas, crujir de
 dientes, voz temblorosa.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'S�ntomas som�ticos generales (sensoriales)
-Zumbidos de o�dos, visi�n borrosa, sofocos y escalofr�os,
-sensaci�n de debilidad, sensaci�n de hormigueo.')
+VALUES ('S', 'Sintomas somaticos generales (sensoriales)
+Zumbidos de oidos, vision borrosa, sofocos y escalofr�os,
+sensacion de debilidad, sensacion de hormigueo.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'S�ntomas cardiovasculares.
+VALUES ('S', 'Sintomas cardiovasculares.
 Taquicardia, palpitaciones, dolor en el pecho, latidos
-vasculares, sensaci�n de desmayo, extras�stole.')
+vasculares, sensacion de desmayo, extrasistole.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'S�ntomas respiratorios.
-Opresi�n o constricci�n en el pecho, sensaci�n de ahogo,
+VALUES ('S', 'Sintomas respiratorios.
+Opresion o constriccion en el pecho, sensacion de ahogo,
 suspiros, disnea.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'S�ntomas gastrointestinales.
+VALUES ('S', 'Sintomas gastrointestinales.
 Dificultad para tragar, gases, dispepsia: dolor antes y
-despu�s de comer, sensaci�n de ardor, sensaci�n de
-est�mago lleno, v�mitos acuosos, v�mitos, sensaci�n de
-est�mago vac�o, digesti�n lenta, borborigmos (ruido
-intestinal), diarrea, p�rdida de peso, estre�imiento.')
+despues de comer, sensacion de ardor, sensacion de
+estomago lleno, vomitos acuosos, vomitos, sensacion de
+estomago vacio, digestion lenta, borborigmos (ruido
+intestinal), diarrea, perdida de peso, estreñimiento.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'S�ntomas genitourinarios.
-Micci�n frecuente, micci�n urgente, amenorrea,
-menorragia, aparici�n de la frigidez, eyaculaci�n precoz,
-ausencia de erecci�n, impotencia.')
+VALUES ('S', 'Sintomas genitourinarios.
+Miccion frecuente, miccion urgente, amenorrea,
+menorragia, aparicion de la frigidez, eyaculacion precoz,
+ausencia de ereccion, impotencia.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'S�ntomas aut�nomos.
-Boca seca, rubor, palidez, tendencia a sudar, v�rtigos,
-cefaleas de tensi�n, piloerecci�n (pelos de punta)')
+VALUES ('S', 'Sintomas autonomos.
+Boca seca, rubor, palidez, tendencia a sudar, vertigos,
+cefaleas de tension, piloereccion (pelos de punta)')
 
 ----------------------------------------------------------------------
 
@@ -251,8 +251,8 @@ INSERT INTO Medicament (medName) VALUES ('Adapin')
 
 ----------------------------------------------------------------------
 
-INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  5)
-INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (0,  3)
-INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  6)
-INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  1)
-INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  2)
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,5)
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (0,3)
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,6)
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,1)
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,2)
