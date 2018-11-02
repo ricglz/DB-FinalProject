@@ -104,7 +104,7 @@ CREATE TABLE HA_Question (
   anxType CHAR(1) NOT NULL,
   description VARCHAR(500),
 
-  PRIMARY KEY(qId),
+  PRIMARY KEY(qId)
 )
 
 CREATE TABLE HA_Answer (
@@ -119,39 +119,40 @@ CREATE TABLE HA_Answer (
 
 ----------------------------------------------------------------------
 
-INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate )
+INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate)
 VALUES ('John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05')
 
-INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate )
+INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate)
 VALUES ('Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10')
 
-INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate ) 
+INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate) 
 VALUES ('Hugh', 'Jackman', 'M', '5412345678', '2nd Street', '72100', 'NL', 'San Pedro', '1987-12-04')
 
-INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate ) 
+INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate) 
 VALUES ('Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25')
 
 ----------------------------------------------------------------------
 
-INSERT INTO HA_Question ( anxType, description )
-VALUES ('P', 'Estado de ánimo ansioso.
-Preocupaciones, anticipación de lo peor, aprensión
-(anticipación temerosa), irritabilidad')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('P', 'Tensión.
-Sensación de tensión, imposibilidad de relajarse,
-reacciones con sobresalto, llanto fácil, temblores,
-sensación de inquietud.')
+VALUES ('P', 'Estado de ï¿½nimo ansioso.
+Preocupaciones, anticipaciï¿½n de lo peor, aprensiï¿½n
+(anticipaciï¿½n temerosa), irritabilidad')
+
+INSERT INTO HA_Question ( anxType, description )
+VALUES ('P', 'Tensiï¿½n.
+Sensaciï¿½n de tensiï¿½n, imposibilidad de relajarse,
+reacciones con sobresalto, llanto fï¿½cil, temblores,
+sensaciï¿½n de inquietud.')
 
 INSERT INTO HA_Question ( anxType, description )
 VALUES ('P', 'Temores.
 A la oscuridad, a los desconocidos, a quedarse solo, a los
-animales grandes, al tráfico, a las multitudes.')
+animales grandes, al trï¿½fico, a las multitudes.')
 
 INSERT INTO HA_Question ( anxType, description )
 VALUES ('P', 'Insomnio.
-Dificultad para dormirse, sueño interrumpido, sueño
+Dificultad para dormirse, sueï¿½o interrumpido, sueï¿½o
 insatisfactorio y cansancio al despertar.')
 
 INSERT INTO HA_Question ( anxType, description )
@@ -159,47 +160,64 @@ VALUES ('P', 'Intelectual (cognitivo)
 Dificultad para concentrarse, mala memoria.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('P', 'Estado de ánimo deprimido.
-Pérdida de interés, insatisfacción en las diversiones,
-depresión, despertar prematuro, cambios de humor
-durante el día.')
+VALUES ('P', 'Estado de ï¿½nimo deprimido.
+Pï¿½rdida de interï¿½s, insatisfacciï¿½n en las diversiones,
+depresiï¿½n, despertar prematuro, cambios de humor
+durante el dï¿½a.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'Síntomas somáticos generales (musculares)
+VALUES ('S', 'Sï¿½ntomas somï¿½ticos generales (musculares)
 Dolores y molestias musculares, rigidez muscular,
-contracciones musculares, sacudidas clónicas, crujir de
+contracciones musculares, sacudidas clï¿½nicas, crujir de
 dientes, voz temblorosa.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'Síntomas somáticos generales (sensoriales)
-Zumbidos de oídos, visión borrosa, sofocos y escalofríos,
-sensación de debilidad, sensación de hormigueo.')
+VALUES ('S', 'Sï¿½ntomas somï¿½ticos generales (sensoriales)
+Zumbidos de oï¿½dos, visiï¿½n borrosa, sofocos y escalofrï¿½os,
+sensaciï¿½n de debilidad, sensaciï¿½n de hormigueo.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'Síntomas cardiovasculares.
+VALUES ('S', 'Sï¿½ntomas cardiovasculares.
 Taquicardia, palpitaciones, dolor en el pecho, latidos
-vasculares, sensación de desmayo, extrasístole.')
+vasculares, sensaciï¿½n de desmayo, extrasï¿½stole.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'Síntomas respiratorios.
-Opresión o constricción en el pecho, sensación de ahogo,
+VALUES ('S', 'Sï¿½ntomas respiratorios.
+Opresiï¿½n o constricciï¿½n en el pecho, sensaciï¿½n de ahogo,
 suspiros, disnea.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'Síntomas gastrointestinales.
+VALUES ('S', 'Sï¿½ntomas gastrointestinales.
 Dificultad para tragar, gases, dispepsia: dolor antes y
-después de comer, sensación de ardor, sensación de
-estómago lleno, vómitos acuosos, vómitos, sensación de
-estómago vacío, digestión lenta, borborigmos (ruido
-intestinal), diarrea, pérdida de peso, estreñimiento.')
+despuï¿½s de comer, sensaciï¿½n de ardor, sensaciï¿½n de
+estï¿½mago lleno, vï¿½mitos acuosos, vï¿½mitos, sensaciï¿½n de
+estï¿½mago vacï¿½o, digestiï¿½n lenta, borborigmos (ruido
+intestinal), diarrea, pï¿½rdida de peso, estreï¿½imiento.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'Síntomas genitourinarios.
-Micción frecuente, micción urgente, amenorrea,
-menorragia, aparición de la frigidez, eyaculación precoz,
-ausencia de erección, impotencia.')
+VALUES ('S', 'Sï¿½ntomas genitourinarios.
+Micciï¿½n frecuente, micciï¿½n urgente, amenorrea,
+menorragia, apariciï¿½n de la frigidez, eyaculaciï¿½n precoz,
+ausencia de erecciï¿½n, impotencia.')
 
 INSERT INTO HA_Question ( anxType, description )
-VALUES ('S', 'Síntomas autónomos.
-Boca seca, rubor, palidez, tendencia a sudar, vértigos,
-cefaleas de tensión, piloerección (pelos de punta)')
+VALUES ('S', 'Sï¿½ntomas autï¿½nomos.
+Boca seca, rubor, palidez, tendencia a sudar, vï¿½rtigos,
+cefaleas de tensiï¿½n, piloerecciï¿½n (pelos de punta)')
+
+INSERT INTO Medicament (medName) VALUES ('Celexa')
+INSERT INTO Medicament (medName) VALUES ('Lexapro')
+INSERT INTO Medicament (medName) VALUES ('Paxil')
+INSERT INTO Medicament (medName) VALUES ('Pexeva')
+INSERT INTO Medicament (medName) VALUES ('Prozac')
+INSERT INTO Medicament (medName) VALUES ('Adapin')
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  5)
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (0,  3)
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  6)
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  1)
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  2)
