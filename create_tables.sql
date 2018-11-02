@@ -1,6 +1,7 @@
 CREATE TABLE patient (
+  patientId INT NOT NULL IDENTITY(1,1),
   sex CHAR(1),
-  telephone VARCHAR(14),
+  telephone CHAR(10),
   street VARCHAR(50),
   zip VARCHAR(8),
   state VARCHAR(8),
@@ -10,43 +11,47 @@ CREATE TABLE patient (
   lName VARCHAR(50),
   religion VARCHAR(8),
   civilStatus VARCHAR(8),
-  patientId INT
+
+  PRIMARY KEY(patientId)
 )
 
-ALTER TABLE patient
-  ADD CONSTRAINT patientId_kprim PRIMARY KEY(patientId)
-GO
-
 CREATE TABLE visit (
+  visitId INT NOT NULL IDENTITY(1,1),
   vDate DATETIME,
   motive VARCHAR(50),
   referral VARCHAR(50),
-  visitId INT
+
+  PRIMARY KEY(visitId)
 )
 
-ALTER TABLE visit
-  ADD CONSTRAINT visitId_kprim PRIMARY KEY(visitId)
-GO
+CREATE TABLE medicament (
+  medId INT NOT NULL IDENTITY(1,1),
+  medName VARCHAR(50)
+
+  PRIMARY KEY(medId)
+)
+
+CREATE TABLE diagnosis (
+  dCode INT NOT NULL IDENTITY(1,1),
+  isPrimary BIT NOT NULL,
+  sicknessDegree INT NOT NULL
+
+  PRIMARY KEY(dCode)
+)
 
 CREATE TABLE diagnosis_visit (
-  id INT,
-  visitId INT,
-  dCode INT 
+  visitId INT NOT NULL,
+  dCode INT NOT NULL,
+
+  PRIMARY KEY(visitId, dCode)
 )
 
-ALTER TABLE diagnosis_visit
-  ADD CONSTRAINT id_kprim PRIMARY KEY(id)
-GO
-
 CREATE TABLE medicament_visit (
-  id INT,
-  visitId INT,
-  medId INT,
+  visitId INT NOT NULL,
+  medId INT NOT NULL,
   dateBegin DATETIME,
   instructions VARCHAR(50),
   dateEnd DATETIME
-)
 
-ALTER TABLE medicament_visit
-  ADD CONSTRAINT id_kprim PRIMARY KEY(id)
-GO
+  PRIMARY KEY(visitId, medId)
+)
