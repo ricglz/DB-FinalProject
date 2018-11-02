@@ -133,6 +133,41 @@ VALUES ('Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San
 
 ----------------------------------------------------------------------
 
+INSERT INTO HD_Question ( description ) 
+VALUES ('Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Sentimientos de culpa')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Suicidio')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Insomnio precoz')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Insomnio intermedio')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Insomnio tardío')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Trabajo y actividades')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Inhibición psicomotora (lentitud de pensamiento y lenguaje, facultad de
+concentración disminuida, disminución de la actividad motora)')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Ansiedad psíquica')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Ansiedad somática (signos físicos de ansiedad: gastrointestinales: sequedad de
+boca, diarrea, eructos, indigestión, etc; cardiovasculares: palpitaciones, cefaleas;
+respiratorios: hiperventilación, suspiros; frecuencia de micción incrementada;
+transpiración)')
+
+----------------------------------------------------------------------
 
 INSERT INTO HA_Question ( anxType, description )
 VALUES ('P', 'Estado de �nimo ansioso.
@@ -205,6 +240,8 @@ VALUES ('S', 'S�ntomas aut�nomos.
 Boca seca, rubor, palidez, tendencia a sudar, v�rtigos,
 cefaleas de tensi�n, piloerecci�n (pelos de punta)')
 
+----------------------------------------------------------------------
+
 INSERT INTO Medicament (medName) VALUES ('Celexa')
 INSERT INTO Medicament (medName) VALUES ('Lexapro')
 INSERT INTO Medicament (medName) VALUES ('Paxil')
@@ -212,12 +249,10 @@ INSERT INTO Medicament (medName) VALUES ('Pexeva')
 INSERT INTO Medicament (medName) VALUES ('Prozac')
 INSERT INTO Medicament (medName) VALUES ('Adapin')
 
+----------------------------------------------------------------------
+
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  5)
-
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (0,  3)
-
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  6)
-
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  1)
-
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  2)
