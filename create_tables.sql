@@ -139,3 +139,14 @@ INSERT INTO Medicament (medName) VALUES ('Paxil')
 INSERT INTO Medicament (medName) VALUES ('Pexeva')
 INSERT INTO Medicament (medName) VALUES ('Prozac')
 INSERT INTO Medicament (medName) VALUES ('Adapin')
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  5)
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (0,  3)
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  6)
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  1)
+
+INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,  2)
+
