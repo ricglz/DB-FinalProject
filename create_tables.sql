@@ -132,3 +132,44 @@ INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, bi
 VALUES ('Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25')
 
 ----------------------------------------------------------------------
+
+CREATE TABLE HD_Question (
+  qId INT NOT NULL IDENTITY(1,1),
+  description VARCHAR(500),
+
+  PRIMARY KEY(qId)
+)
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad)')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Sentimientos de culpa')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Suicidio')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Insomnio precoz')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Insomnio intermedio')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Insomnio tardío')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Trabajo y actividades')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Inhibición psicomotora (lentitud de pensamiento y lenguaje, facultad de
+concentración disminuida, disminución de la actividad motora)')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Ansiedad psíquica')
+
+INSERT INTO HD_Question ( description ) 
+VALUES ('Ansiedad somática (signos físicos de ansiedad: gastrointestinales: sequedad de
+boca, diarrea, eructos, indigestión, etc; cardiovasculares: palpitaciones, cefaleas;
+respiratorios: hiperventilación, suspiros; frecuencia de micción incrementada;
+transpiración)')
