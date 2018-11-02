@@ -68,7 +68,7 @@ CREATE TABLE HD_Test_Res (
   entryId INT NOT NULL IDENTITY(1,1),
   patientId INT NOT NULL,
 
-  PRIMARY KEY(entryId, patientId),
+  PRIMARY KEY(entryId),
   FOREIGN KEY(patientId) REFERENCES Patient(patientId)
 )
 
@@ -97,7 +97,7 @@ CREATE TABLE HA_Test_Res (
   entryId INT NOT NULL IDENTITY(1,1),
   patientId INT NOT NULL,
 
-  PRIMARY KEY(entryId, patientId),
+  PRIMARY KEY(entryId),
   FOREIGN KEY(patientId) REFERENCES Patient(patientId)
 )
 
