@@ -22,7 +22,7 @@ CREATE TABLE Visit (
   motive VARCHAR(50) NOT NULL,
   referral VARCHAR(50),
 
-  PRIMARY KEY(visitId)
+  PRIMARY KEY(visitId),
   FOREIGN KEY(patientId) REFERENCES Patient(patientId)
 )
 
@@ -123,16 +123,16 @@ CREATE TABLE HA_Answer (
 
 ----------------------------------------------------------------------
 
-INSERT INTO Patient VALUES (
-  'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05')
+INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate )
+VALUES ('John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05')
 
-INSERT INTO Patient VALUES (
-  'Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10')
+INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate )
+VALUES ('Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10')
 
-INSERT INTO Patient VALUES (
-  'Hugh', 'Jackman', 'M', '5412345678', '2nd Street', '72100', 'NL', 'San Pedro', '1987-12-04')
+INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate ) 
+VALUES ('Hugh', 'Jackman', 'M', '5412345678', '2nd Street', '72100', 'NL', 'San Pedro', '1987-12-04')
 
-INSERT INTO Patient VALUES (
-  'Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25')
+INSERT INTO Patient ( fName, lName, sex, telephone, street, zip, state, city, birthDate ) 
+VALUES ('Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25')
 
 ----------------------------------------------------------------------
