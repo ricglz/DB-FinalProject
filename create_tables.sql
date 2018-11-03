@@ -21,6 +21,7 @@ CREATE TABLE Visit (
   patientId INT NOT NULL,
   vDate DATE NOT NULL,
   motive VARCHAR(50) NOT NULL,
+  resumen VARCHAR(500) NOT NULL
 
   PRIMARY KEY(visitId),
   FOREIGN KEY(patientId) REFERENCES Patient(patientId)
