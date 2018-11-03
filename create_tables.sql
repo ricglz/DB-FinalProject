@@ -33,6 +33,7 @@ CREATE TABLE Medicament (
   PRIMARY KEY(medId)
 )
 
+/*
 CREATE TABLE Diagnosis (
   dCode INT NOT NULL,
   dFrequent BIT,
@@ -42,6 +43,7 @@ CREATE TABLE Diagnosis (
 
   PRIMARY KEY(dCode)
 )
+*/
 
 CREATE TABLE Prescription (
   prescriptionId INT NOT NULL,
