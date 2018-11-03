@@ -33,6 +33,7 @@ CREATE TABLE Medicament (
   PRIMARY KEY(medId)
 )
 
+/*
 CREATE TABLE Diagnosis (
   dCode INT NOT NULL,
   dFrequent BIT,
@@ -42,11 +43,12 @@ CREATE TABLE Diagnosis (
 
   PRIMARY KEY(dCode)
 )
+*/
 
 CREATE TABLE Prescription (
   prescriptionId INT NOT NULL,
   visitId INT NOT NULL,
-  dateOfPrescription DATE NOT NULL,
+  --dateOfPrescription DATE NOT NULL,
   isPrimary BIT NOT NULL,
   sicknessDegree INT NOT NULL,
 
@@ -117,15 +119,19 @@ CREATE TABLE Response (
 
 INSERT INTO Patient VALUES (1, 'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05')
 INSERT INTO Visit VALUES (1, 1, '2018-10-10', 'Suspects mild depression', 'Dr. Alfonso')
+INSERT INTO Prescription VALUES (1, 1, 1, 4)
 
 INSERT INTO Patient VALUES (2, 'Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10')
 INSERT INTO Visit VALUES (2, 2, '2018-10-11', 'Had panic attack', 'Dr. Martinez')
+INSERT INTO Prescription VALUES (2, 2, 1, 3)
 
 INSERT INTO Patient VALUES (3, 'Hugh', 'Jackman', 'M', '5412345678', '2nd Street', '72100', 'NL', 'San Pedro', '1987-12-04')
 INSERT INTO Visit VALUES (3, 3, '2018-10-12', 'Attempted suicide', 'Dr. Fernandez')
+INSERT INTO Prescription VALUES (3, 3, 1, 7)
 
 INSERT INTO Patient VALUES (4, 'Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25')
 INSERT INTO Visit VALUES (4, 4, '2018-10-13', 'Displays abnormal social interactions', 'Dr. Alvarez')
+INSERT INTO Prescription VALUES (4, 4, 1, 2)
 
 ----------------------------------------------------------------------
 
@@ -203,3 +209,16 @@ INSERT INTO Medicament VALUES (5, 'Prozac')
 INSERT INTO Medicament VALUES (6, 'Adapin')
 
 ----------------------------------------------------------------------
+
+INSERT INTO Prescription_details VALUES (1, 1, 'Take 20mg every 7 hours')
+INSERT INTO Prescription_details VALUES (2, 6, 'Take 20mg every 7 hours')
+INSERT INTO Prescription_details VALUES (3, 4, 'Take 20mg every 7 hours')
+INSERT INTO Prescription_details VALUES (3, 5, 'Take 20mg every 7 hours')
+INSERT INTO Prescription_details VALUES (4, 2, 'Take 20mg every 7 hours')
+
+----------------------------------------------------------------------
+
+INSERT INTO Diagnosis_details VALUES (1, 424)
+INSERT INTO Diagnosis_details VALUES (2, 907)
+INSERT INTO Diagnosis_details VALUES (3, 418)
+INSERT INTO Diagnosis_details VALUES (4, 11)
