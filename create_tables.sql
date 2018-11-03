@@ -110,7 +110,7 @@ CREATE TABLE Response (
 )
 
 ----------------------------------------------------------------------
-/*
+
 
 INSERT INTO Patient (fName, lName, sex, telephone, street, zip, state, city, birthDate)
 VALUES ('John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05')
@@ -249,5 +249,3 @@ INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (0,3)
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,6)
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,1)
 INSERT INTO Diagnosis ( isPrimary, sicknessDegree )VALUES (1,2)
-
-*/
