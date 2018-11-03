@@ -1,5 +1,5 @@
 CREATE TABLE Patient (
-  patientId INT NOT NULL IDENTITY(1,1),
+  patientId INT NOT NULL,
   fName VARCHAR(50) NOT NULL,
   lName VARCHAR(50) NOT NULL,
   sex CHAR(1) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE Patient (
 ----------------------------------------------------------------------
 
 CREATE TABLE Visit (
-  visitId INT NOT NULL IDENTITY(1,1),
+  visitId INT NOT NULL,
   patientId INT NOT NULL,
   vDate DATE NOT NULL,
   motive VARCHAR(50) NOT NULL,
@@ -27,21 +27,31 @@ CREATE TABLE Visit (
 )
 
 CREATE TABLE Medicament (
-  medId INT NOT NULL IDENTITY(1,1),
+  medId INT NOT NULL,
   medName VARCHAR(50) NOT NULL,
 
   PRIMARY KEY(medId)
 )
 
 CREATE TABLE Diagnosis (
-  dCode INT NOT NULL IDENTITY(1,1),
+  dCode INT NOT NULL,
   isPrimary BIT NOT NULL,
   sicknessDegree INT NOT NULL,
 
   PRIMARY KEY(dCode)
 )
 
-CREATE TABLE Diagnosis_visit (
+CREATE TABLE Prescription (
+  prescriptionId INT NOT NULL,
+  visitId INT NOT NULL,
+  dateOfPrescription DATE NOT NULL,
+
+  PRIMARY KEY(prescriptionId),
+  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
+)
+
+
+CREATE TABLE Diagnosis_details (
   visitId INT NOT NULL,
   dCode INT NOT NULL,
 
@@ -50,22 +60,20 @@ CREATE TABLE Diagnosis_visit (
   FOREIGN KEY(dCode) REFERENCES Diagnosis(dCode),
 )
 
-CREATE TABLE Medicament_visit (
-  visitId INT NOT NULL,
+CREATE TABLE Prescription_details (
+  prescriptionId INT NOT NULL,
   medId INT NOT NULL,
-  dateBegin DATE,
-  instructions VARCHAR(50),
-  dateEnd DATE,
+  instructions VARCHAR(500),
 
-  PRIMARY KEY(visitId, medId),
-  FOREIGN KEY(visitId) REFERENCES Visit(visitId),
+  PRIMARY KEY(prescriptionId, medId),
+  FOREIGN KEY(prescriptionId) REFERENCES Prescription(prescriptionId),
   FOREIGN KEY(medId) REFERENCES Medicament(medId),
 )
 
 ----------------------------------------------------------------------
 
 CREATE TABLE HD_Test_Res (
-  entryId INT NOT NULL IDENTITY(1,1),
+  entryId INT NOT NULL,
   visitId INT NOT NULL,
 
   PRIMARY KEY(entryId),
@@ -73,7 +81,7 @@ CREATE TABLE HD_Test_Res (
 )
 
 CREATE TABLE HD_Question (
-  qId INT NOT NULL IDENTITY(1,1),
+  qId INT NOT NULL,
   description VARCHAR(500),
 
   PRIMARY KEY(qId)
@@ -92,7 +100,7 @@ CREATE TABLE HD_Answer (
 ----------------------------------------------------------------------
 
 CREATE TABLE HA_Test_Res (
-  entryId INT NOT NULL IDENTITY(1,1),
+  entryId INT NOT NULL,
   visitId INT NOT NULL,
 
   PRIMARY KEY(entryId),
@@ -100,7 +108,7 @@ CREATE TABLE HA_Test_Res (
 )
 
 CREATE TABLE HA_Question (
-  qId INT NOT NULL IDENTITY(1,1),
+  qId INT NOT NULL,
   anxType CHAR(1) NOT NULL,
   description VARCHAR(500),
 
