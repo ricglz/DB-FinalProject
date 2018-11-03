@@ -37,22 +37,9 @@ CREATE TABLE Medicament (
   PRIMARY KEY(medId)
 )
 
-/*
-CREATE TABLE Diagnosis (
-  dCode INT NOT NULL,
-  dFrequent BIT,
-  ICD9CM VARCHAR(40),
-  ICD10CM VARCHAR(40),
-  DSM5 VARCHAR(300),
-
-  PRIMARY KEY(dCode)
-)
-*/
-
 CREATE TABLE Prescription (
   prescriptionId INT NOT NULL,
   visitId INT NOT NULL,
-  --dateOfPrescription DATE NOT NULL
 
   PRIMARY KEY(prescriptionId),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId)
@@ -141,16 +128,65 @@ INSERT INTO Prescription VALUES (4, 4, 1, 2)
 INSERT INTO Test VALUES (1, 'Depression')
 INSERT INTO Test VALUES (2, 'Anxiety')
 
-INSERT INTO Question VALUES (101, 'Humor depresivo', 1)
-INSERT INTO Question VALUES (102, 'Sentimientos de culpa', 1)
-INSERT INTO Question VALUES (103, 'Suicidio', 1)
-INSERT INTO Question VALUES (104, 'Insomnio precoz', 1)
-INSERT INTO Question VALUES (105, 'Insomnio intermedio', 1)
-INSERT INTO Question VALUES (201, 'Estado de ánimo ansioso', 2)
-INSERT INTO Question VALUES (202, 'Tensión', 2)
-INSERT INTO Question VALUES (203, 'Temores', 2)
-INSERT INTO Question VALUES (204, 'Insomnio', 2)
-INSERT INTO Question VALUES (205, 'Intelectual', 2)
+INSERT INTO Question VALUES (101, 'Humor depresivo (tristeza, desesperanza, desamparo, sentimiento de inutilidad) ',
+ '0. Ausente 
+ 1. Estas sensaciones las expresa solamente si le preguntan como se siente 
+ 2. Estas sensaciones las relata espontáneamente 
+ 3. Sensaciones no comunicadas verbalmente (expresión facial, postura, voz, tendencia al
+llanto) 
+4. Manifiesta estas sensaciones en su comunicación verbal y no verbal en forma
+espontánea a ', 1)
+
+INSERT INTO Question VALUES (102, 'Sentimientos de culpa', '0. Ausente 
+  1. Se culpa a si mismo, cree haber decepcionado a la gente 
+  2. Tiene ideas de culpabilidad o medita sobre errores pasados o malas acciones 
+  3. Siente que la enfermedad actual es un castigo 
+  4. Oye voces acusatorias o de denuncia y/o experimenta alucinaciones visuales de amenaza ', 1)
+
+INSERT INTO Question VALUES (103, 'Suicidio','0. Ausente 
+  1. Le parece que la vida no vale la pena ser vivida 
+  2. Desearía estar muerto o tiene pensamientos sobre la posibilidad de morirse 
+  3. Ideas de suicidio o amenazas 
+  4. Intentos de suicidio (cualquier intento serio)', 1)
+
+INSERT INTO Question VALUES (104, 'Insomnio precoz','0. No tiene dificultad 
+  1. Dificultad ocasional para dormir, por ej. más de media hora el conciliar el sueño 
+  2. Dificultad para dormir cada noche ', 1)
+
+INSERT INTO Question VALUES (105, 'Insomnio intermedio','0. No hay dificultad 
+  1. Esta desvelado e inquieto o se despierta varias veces durante la noche 
+  2. Esta despierto durante la noche, cualquier ocasión de levantarse de la cama se clasifica
+en 2 (excepto por motivos de evacuar)', 1)
+
+INSERT INTO Question VALUES (201, 'Estado de ánimo ansioso','0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO Question VALUES (202, 'Tensión','0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO Question VALUES (203, 'Temores','0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO Question VALUES (204, 'Insomnio','0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO Question VALUES (205, 'Intelectual','0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
 
 INSERT INTO Instance VALUES (1024, 1, 1)
 INSERT INTO Instance VALUES (1025, 2, 1)
@@ -204,22 +240,20 @@ INSERT INTO Response VALUES (6049, 205, 1031, 1)
 
 ----------------------------------------------------------------------
 
-INSERT INTO Medicament VALUES (1, 'Celexa')
-INSERT INTO Medicament VALUES (2, 'Lexapro')
-INSERT INTO Medicament VALUES (3, 'Paxil')
-INSERT INTO Medicament VALUES (4, 'Pexeva')
-INSERT INTO Medicament VALUES (5, 'Prozac')
-INSERT INTO Medicament VALUES (6, 'Adapin')
-INSERT INTO Medicament VALUES (7, 'Farmaxetina', 'Fluoxetina', '20 mg', 'capsulas', 'ifa CELTICS')
-INSERT INTO Medicament VALUES (7, 'Farmaxetina')
+INSERT INTO Medicament VALUES (1, 'Farmaxetina', 'Fluoxetina', '20 mg', 'Capsulas', 'ifa CELTICS')
+INSERT INTO Medicament VALUES (2, 'Tressvin', 'Sertalina', '50 mg', 'Tabletas', 'ifa CELTICS')
+INSERT INTO Medicament VALUES (3, 'Tim Asf', 'Quetiapina', '100 mg', 'Tabletas', 'ASOFARMA')
+INSERT INTO Medicament VALUES (4, 'Fluxacord', 'Ciprofloxacino', '500 mg', 'Tabletas', 'accord farma')
+INSERT INTO Medicament VALUES (5, 'Toradol', 'Ketorolaco', '10 mg', 'Tabletas', 'Pharma life')
+INSERT INTO Medicament VALUES (6, 'Buscapina', 'Hioscina', '10 mg', 'Tabletas', 'Pharma life')
+
 
 ----------------------------------------------------------------------
 
-INSERT INTO Prescription_details VALUES (1, 1, 'Take 20mg every 7 hours')
-INSERT INTO Prescription_details VALUES (2, 6, 'Take 20mg every 7 hours')
-INSERT INTO Prescription_details VALUES (3, 4, 'Take 20mg every 7 hours')
-INSERT INTO Prescription_details VALUES (3, 5, 'Take 20mg every 7 hours')
-INSERT INTO Prescription_details VALUES (4, 2, 'Take 20mg every 7 hours')
+INSERT INTO Prescription_details VALUES (1, 1, 'Tomar 20mg cada 7 horas')
+INSERT INTO Prescription_details VALUES (2, 2, 'Tomar 20mg cada 7 horas')
+INSERT INTO Prescription_details VALUES (3, 3, 'Tomar 20mg cada 7 horas')
+INSERT INTO Prescription_details VALUES (4, 4, 'Tomar 20mg cada 7 horas')
 
 ----------------------------------------------------------------------
 
