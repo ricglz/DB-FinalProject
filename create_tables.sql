@@ -35,8 +35,10 @@ CREATE TABLE Medicament (
 
 CREATE TABLE Diagnosis (
   dCode INT NOT NULL,
-  isPrimary BIT NOT NULL,
-  sicknessDegree INT NOT NULL,
+  dFrequent BIT,
+  ICD9CM VARCHAR(40),
+  ICD10CM VARCHAR(40),
+  DSM5 VARCHAR(300),
 
   PRIMARY KEY(dCode)
 )
@@ -45,6 +47,8 @@ CREATE TABLE Prescription (
   prescriptionId INT NOT NULL,
   visitId INT NOT NULL,
   dateOfPrescription DATE NOT NULL,
+  isPrimary BIT NOT NULL,
+  sicknessDegree INT NOT NULL,
 
   PRIMARY KEY(prescriptionId),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId)
@@ -196,9 +200,3 @@ INSERT INTO Medicament VALUES (5, 'Prozac')
 INSERT INTO Medicament VALUES (6, 'Adapin')
 
 ----------------------------------------------------------------------
-
-INSERT INTO Diagnosis VALUES (1, 1,5)
-INSERT INTO Diagnosis VALUES (2, 0,3)
-INSERT INTO Diagnosis VALUES (3, 1,6)
-INSERT INTO Diagnosis VALUES (4, 1,1)
-INSERT INTO Diagnosis VALUES (5, 1,2)
