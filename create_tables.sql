@@ -41,7 +41,17 @@ CREATE TABLE Diagnosis (
   PRIMARY KEY(dCode)
 )
 
-CREATE TABLE Diagnosis_visit (
+CREATE TABLE Prescription (
+  prescriptionId INT NOT NULL,
+  visitId INT NOT NULL,
+  dateOfPrescription DATE NOT NULL,
+
+  PRIMARY KEY(prescriptionId),
+  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
+)
+
+
+CREATE TABLE Diagnosis_details (
   visitId INT NOT NULL,
   dCode INT NOT NULL,
 
@@ -50,15 +60,13 @@ CREATE TABLE Diagnosis_visit (
   FOREIGN KEY(dCode) REFERENCES Diagnosis(dCode),
 )
 
-CREATE TABLE Medicament_visit (
-  visitId INT NOT NULL,
+CREATE TABLE Prescription_details (
+  prescriptionId INT NOT NULL,
   medId INT NOT NULL,
-  dateBegin DATE,
-  instructions VARCHAR(50),
-  dateEnd DATE,
+  instructions VARCHAR(500),
 
-  PRIMARY KEY(visitId, medId),
-  FOREIGN KEY(visitId) REFERENCES Visit(visitId),
+  PRIMARY KEY(prescriptionId, medId),
+  FOREIGN KEY(prescriptionId) REFERENCES Prescription(prescriptionId),
   FOREIGN KEY(medId) REFERENCES Medicament(medId),
 )
 
