@@ -18,7 +18,7 @@ CREATE TABLE Patient (
 CREATE TABLE Visit (
   visitId INT NOT NULL IDENTITY(1,1),
   patientId INT NOT NULL,
-  vDate DATETIME NOT NULL,
+  vDate DATE NOT NULL,
   motive VARCHAR(50) NOT NULL,
   referral VARCHAR(50),
 
@@ -53,9 +53,9 @@ CREATE TABLE Diagnosis_visit (
 CREATE TABLE Medicament_visit (
   visitId INT NOT NULL,
   medId INT NOT NULL,
-  dateBegin DATETIME,
+  dateBegin DATE,
   instructions VARCHAR(50),
-  dateEnd DATETIME,
+  dateEnd DATE,
 
   PRIMARY KEY(visitId, medId),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId),
