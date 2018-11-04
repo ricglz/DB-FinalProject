@@ -109,20 +109,20 @@ CREATE TABLE Response (
 ----------------------------------------------------------------------
 
 INSERT INTO Patient VALUES (1, 'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05', 'Dr. Alfonso')
-INSERT INTO Visit VALUES (1, 1, '2018-10-10', 'Suspects mild depression')
-INSERT INTO Prescription VALUES (1, 1, 1, 4)
+INSERT INTO Visit VALUES (1, 1, '2018-10-10', 'Suspects mild depression', NULL)
+INSERT INTO Prescription VALUES (1, 1)
 
 INSERT INTO Patient VALUES (2, 'Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10', 'Dr. Martinez')
-INSERT INTO Visit VALUES (2, 2, '2018-10-11', 'Had panic attack')
-INSERT INTO Prescription VALUES (2, 2, 1, 3)
+INSERT INTO Visit VALUES (2, 2, '2018-10-11', 'Had panic attack', NULL)
+INSERT INTO Prescription VALUES (2, 2)
 
 INSERT INTO Patient VALUES (3, 'Hugh', 'Jackman', 'M', '5412345678', '2nd Street', '72100', 'NL', 'San Pedro', '1987-12-04', 'Dr. Fernandez')
-INSERT INTO Visit VALUES (3, 3, '2018-10-12', 'Attempted suicide')
-INSERT INTO Prescription VALUES (3, 3, 1, 7)
+INSERT INTO Visit VALUES (3, 3, '2018-10-12', 'Attempted suicide', NULL)
+INSERT INTO Prescription VALUES (3, 3)
 
 INSERT INTO Patient VALUES (4, 'Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25', 'Dr. Alvarez')
-INSERT INTO Visit VALUES (4, 4, '2018-10-13', 'Displays abnormal social interactions')
-INSERT INTO Prescription VALUES (4, 4, 1, 2)
+INSERT INTO Visit VALUES (4, 4, '2018-10-13', 'Displays abnormal social interactions', NULL)
+INSERT INTO Prescription VALUES (4, 4)
 
 ----------------------------------------------------------------------
 
