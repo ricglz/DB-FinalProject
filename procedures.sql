@@ -20,5 +20,5 @@ JOIN Medicament m ON pd.medId = m.medId
 WHERE v.patientId = Id
 
 --5. INPUT: Id
-SELECT testId, vDate, SUM() AS puntuacion, 
+-- SELECT testId, vDate, SUM() AS puntuacion, 
 
