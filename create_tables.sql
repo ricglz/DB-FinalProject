@@ -14,8 +14,6 @@ CREATE TABLE Patient (
   PRIMARY KEY(patientId)
 )
 
-----------------------------------------------------------------------
-
 CREATE TABLE Visit (
   visitId INT NOT NULL,
   patientId INT NOT NULL,
@@ -33,7 +31,7 @@ CREATE TABLE Medicament (
   ingredientName VARCHAR(50) NOT NULL,
   quantity VARCHAR(10)  NOT NULL,
   typeOfDosis VARCHAR(50) NOT NULL,
-  laboratory VARCHAR(50) not NULL
+  laboratory VARCHAR(50) not NULL,
 
   PRIMARY KEY(medId)
 )
@@ -53,7 +51,7 @@ CREATE TABLE Diagnosis_details (
 
   PRIMARY KEY(visitId, dCode),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId),
-  FOREIGN KEY(dCode) REFERENCES Diagnosis(dCode),
+  FOREIGN KEY(dCode) REFERENCES Diagnosis(dCode)
 )
 
 CREATE TABLE Prescription_details (
@@ -65,8 +63,6 @@ CREATE TABLE Prescription_details (
   FOREIGN KEY(prescriptionId) REFERENCES Prescription(prescriptionId),
   FOREIGN KEY(medId) REFERENCES Medicament(medId)
 )
-
-----------------------------------------------------------------------
 
 CREATE TABLE Test (
   testId INT NOT NULL,
@@ -106,8 +102,6 @@ CREATE TABLE Response (
   FOREIGN KEY(instanceId) REFERENCES Instance(instanceId)
 )
 
-----------------------------------------------------------------------
-
 INSERT INTO Patient VALUES (1, 'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05', 'Dr. Alfonso');
 INSERT INTO Visit VALUES (1, 1, '2018-10-10', 'Suspects mild depression', NULL);
 INSERT INTO Prescription VALUES (1, 1);
@@ -123,8 +117,6 @@ INSERT INTO Prescription VALUES (3, 3);
 INSERT INTO Patient VALUES (4, 'Jason', 'Boise', 'M', '8100000000', 'Third Street', '60100', 'NL', 'San Nicolas', '1970-10-25', 'Dr. Alvarez');
 INSERT INTO Visit VALUES (4, 4, '2018-10-13', 'Displays abnormal social interactions', NULL);
 INSERT INTO Prescription VALUES (4, 4);
-
-----------------------------------------------------------------------
 
 INSERT INTO Test VALUES (1, 'Depression');
 INSERT INTO Test VALUES (2, 'Anxiety');
@@ -239,8 +231,6 @@ INSERT INTO Response VALUES (6047, 203, 1031, 0);
 INSERT INTO Response VALUES (6048, 204, 1031, 1);
 INSERT INTO Response VALUES (6049, 205, 1031, 1);
 
-----------------------------------------------------------------------
-
 INSERT INTO Medicament VALUES (1, 'Farmaxetina', 'Fluoxetina', '20 mg', 'Capsulas', 'ifa CELTICS');
 INSERT INTO Medicament VALUES (2, 'Tressvin', 'Sertalina', '50 mg', 'Tabletas', 'ifa CELTICS');
 INSERT INTO Medicament VALUES (3, 'Tim Asf', 'Quetiapina', '100 mg', 'Tabletas', 'ASOFARMA');
@@ -249,14 +239,10 @@ INSERT INTO Medicament VALUES (5, 'Toradol', 'Ketorolaco', '10 mg', 'Tabletas', 
 INSERT INTO Medicament VALUES (6, 'Buscapina', 'Hioscina', '10 mg', 'Tabletas', 'Pharma life');
 
 
-----------------------------------------------------------------------
-
 INSERT INTO Prescription_details VALUES (1, 1, 'Tomar 20mg cada 7 horas');
 INSERT INTO Prescription_details VALUES (2, 2, 'Tomar 20mg cada 7 horas');
 INSERT INTO Prescription_details VALUES (3, 3, 'Tomar 20mg cada 7 horas');
 INSERT INTO Prescription_details VALUES (4, 4, 'Tomar 20mg cada 7 horas');
-
-----------------------------------------------------------------------
 
 INSERT INTO Diagnosis_details VALUES (1, 424);
 INSERT INTO Diagnosis_details VALUES (2, 907);
