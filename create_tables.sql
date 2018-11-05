@@ -102,9 +102,21 @@ CREATE TABLE Response (
   FOREIGN KEY(instanceId) REFERENCES Instance(instanceId)
 )
 
+CREATE TABLE Doctor (
+  doctorId INT NOT NULL,
+  visitId INT NOT NULL,
+  doctorName VARCHAR(50) NOT NULL,
+  doctorAddress VARCHAR(500),
+  specialization VARCHAR(50),
+
+  PRIMARY KEY(doctorId),
+  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
+)
+
 INSERT INTO Patient VALUES (1, 'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05', 'Dr. Alfonso');
 INSERT INTO Visit VALUES (1, 1, '2018-10-10', 'Suspects mild depression', NULL);
 INSERT INTO Prescription VALUES (1, 1);
+
 
 INSERT INTO Patient VALUES (2, 'Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10', 'Dr. Martinez');
 INSERT INTO Visit VALUES (2, 2, '2018-10-11', 'Had panic attack', NULL);
@@ -248,3 +260,23 @@ INSERT INTO Diagnosis_details VALUES (1, 424);
 INSERT INTO Diagnosis_details VALUES (2, 907);
 INSERT INTO Diagnosis_details VALUES (3, 418);
 INSERT INTO Diagnosis_details VALUES (4, 11);
+
+
+
+INSERT INTO Doctor VALUES (1, 1, 'Dr. Alfonso Medina Garza', NULL, 'Doctor General');
+
+INSERT INTO Visit VALUES (5, 1, '2018-10-17', '1 week check-up', 'Patient has improved');
+INSERT INTO Visit VALUES (6, 1, '2018-10-24', 'Had panic attack', 'Patient needs more help');
+INSERT INTO Visit VALUES (7, 1, '2018-10-31', 'Suspects extreme depression', 'Needs specialist aid');
+INSERT INTO Prescription VALUES (5, 6);
+INSERT INTO Prescription VALUES (6, 7);
+
+INSERT INTO Prescription_details VALUES (1, 2, 'Tomar 3 tabletas cada 4 horas');
+INSERT INTO Prescription_details VALUES (1, 5, 'Tomar 2 tabletas cada 12 horas');
+INSERT INTO Prescription_details VALUES (5, 3, 'Tomar 10 mg cada 10 horas');
+INSERT INTO Prescription_details VALUES (6, 4, 'Tomar 5 mg cada 5 horas');
+
+INSERT INTO Diagnosis_details VALUES (5, 417);
+INSERT INTO Diagnosis_details VALUES (6, 695);
+INSERT INTO Diagnosis_details VALUES (7, 418);
+
