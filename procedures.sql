@@ -30,6 +30,11 @@ FROM (
 ) t
 LEFT JOIN Test_scale ts ON ts.testId = t.testId AND puntuacion BETWEEN ts.lowLimit AND ts.highLimit
 
+--6: INPUT: Id
+SELECT questionTitle, questionInstructions, value FROM Question q
+JOIN Response r ON q.questionId = r.questionId
+WHERE instanceId = Id
+
 --Delete Patient EHR
 DELETE FROM Prescription_details WHERE prescriptionId IN (
     SELECT prescriptionId FROM Visit
