@@ -112,3 +112,13 @@ CREATE TABLE Doctor (
   PRIMARY KEY(doctorId),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId)
 )
+
+CREATE TABLE Test_scale (
+  lowLimit INT NOT NULL,
+  highLimit INT,
+  testId INT NOT NULL,
+  descriptor VARCHAR(30),
+
+  PRIMARY KEY(limitLow),
+  FOREIGN KEY(testId) REFERENCES Test(testId)
+)

@@ -146,8 +146,6 @@ INSERT INTO Diagnosis_details VALUES (2, 907);
 INSERT INTO Diagnosis_details VALUES (3, 418);
 INSERT INTO Diagnosis_details VALUES (4, 11);
 
-
-
 INSERT INTO Doctor VALUES (1, 1, 'Dr. Alfonso Medina Garza', NULL, 'Doctor General');
 
 INSERT INTO Visit VALUES (5, 1, '2018-10-17', '1 week check-up', 'Patient has improved');
@@ -164,3 +162,9 @@ INSERT INTO Prescription_details VALUES (6, 4, 'Tomar 5 mg cada 5 horas');
 INSERT INTO Diagnosis_details VALUES (5, 417);
 INSERT INTO Diagnosis_details VALUES (6, 695);
 INSERT INTO Diagnosis_details VALUES (7, 418);
+
+INSERT INTO Test_scale VALUES (0, 7, 1, 'No deprimido');
+INSERT INTO Test_scale VALUES (8, 13, 1, 'Depresion ligera/menor');
+INSERT INTO Test_scale VALUES (14, 18, 1, 'Depresion moderada');
+INSERT INTO Test_scale VALUES (19, 22, 1, 'Depresion severa');
+INSERT INTO Test_scale VALUES (23, NULL, 1, 'Depresion muy severa');
