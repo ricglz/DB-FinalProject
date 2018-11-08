@@ -167,4 +167,4 @@ INSERT INTO Test_scale VALUES (0, 7, 1, 'No deprimido');
 INSERT INTO Test_scale VALUES (8, 13, 1, 'Depresion ligera/menor');
 INSERT INTO Test_scale VALUES (14, 18, 1, 'Depresion moderada');
 INSERT INTO Test_scale VALUES (19, 22, 1, 'Depresion severa');
-INSERT INTO Test_scale VALUES (23, NULL, 1, 'Depresion muy severa');
+INSERT INTO Test_scale VALUES (23, 54, 1, 'Depresion muy severa');
