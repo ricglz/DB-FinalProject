@@ -160,7 +160,7 @@ INSERT INTO Prescription_details VALUES (5, 3, 'Tomar 10 mg cada 10 horas');
 INSERT INTO Prescription_details VALUES (6, 4, 'Tomar 5 mg cada 5 horas');
 
 INSERT INTO Diagnosis_details VALUES (5, 417);
-INSERT INTO Diagnosis_details VALUES (6, 695);
+INSERT INTO Diagnosis_details VALUES (6, 696);
 INSERT INTO Diagnosis_details VALUES (7, 418);
 
 INSERT INTO Test_scale VALUES (0, 7, 1, 'No deprimido');
@@ -173,3 +173,17 @@ INSERT INTO Test_scale VALUES (0, 17, 2, 'Ansiedad leve');
 INSERT INTO Test_scale VALUES (18, 24, 2, 'Ansiedad moderada');
 INSERT INTO Test_scale VALUES (25, 30, 2, 'Ansiedad severa');
 INSERT INTO Test_scale VALUES (30, 56, 2, 'Ansiedad muy severa');
+
+INSERT INTO Instance VALUES (1032, 1, 5);
+INSERT INTO Instance VALUES (1033, 2, 5);
+
+INSERT INTO Response VALUES (6050, 101, 1032, 2);
+INSERT INTO Response VALUES (6051, 102, 1032, 2);
+INSERT INTO Response VALUES (6052, 103, 1032, 3);
+INSERT INTO Response VALUES (6053, 104, 1032, 1);
+INSERT INTO Response VALUES (6054, 105, 1032, 0);
+INSERT INTO Response VALUES (6055, 201, 1033, 3);
+INSERT INTO Response VALUES (6056, 202, 1033, 2);
+INSERT INTO Response VALUES (6057, 203, 1033, 2);
+INSERT INTO Response VALUES (6058, 204, 1033, 2);
+INSERT INTO Response VALUES (6059, 205, 1033, 1);

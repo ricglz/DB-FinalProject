@@ -5,7 +5,7 @@ WHERE patientId = Id
 
 --2. INPUT: Id
 --Mostrar las visitas
-SELECT visitId, vDate, motive AS 'P.E.E.A.', resumen FROM Visit
+SELECT visitId, vDate, motive AS 'PEEA.', resumen FROM Visit
 WHERE patientId = Id
 
 --3. INPUT: Id
@@ -117,3 +117,44 @@ JOIN Diagnosis_details dd ON v.visitId = dd.visitId
 JOIN Patient p ON v.patientId = p.patientId
 WHERE dCode = dSearch
 ORDER BY vDate DESC
+
+
+--12. Examenes arriba de la media
+--Input: tId
+SELECT p.patientId, fName, lName, SUM(value) AS puntuacion FROM Patient p
+    JOIN Visit v ON p.patientId = v.patientId
+    JOIN Instance i ON i.visitId = v.visitId
+    JOIN Response r ON r.instanceId = i.instanceId
+    WHERE i.testId = tId
+    GROUP BY i.instanceId
+    HAVING puntuacion >= ALL
+    
+    (SELECT AVG(puntuacion) FROM (
+     SELECT SUM(value) AS puntuacion FROM Response r
+     JOIN Instance i ON r.instanceId = i.instanceId
+     WHERE i.testId = tId
+     GROUP BY i.instanceId) t)
+
+--13. Progreso de examen
+--Input:  Id
+SELECT t1.testId, t2.puntuacion - t1.puntuacion AS Diferencia FROM
+
+(SELECT i.instanceId, i.testId, SUM(value) AS puntuacion
+FROM Response r JOIN Instance i ON r.instanceId = i.instanceId
+JOIN Visit v ON i.visitId = v.visitId
+WHERE v.patientId = Id
+GROUP BY instanceId
+ORDER BY vDate ASC
+LIMIT 2) t1
+
+JOIN
+
+(SELECT i.instanceId, i.testId, SUM(value) AS puntuacion
+FROM Response r JOIN Instance i ON r.instanceId = i.instanceId
+JOIN Visit v ON i.visitId = v.visitId
+WHERE v.patientId = Id
+GROUP BY instanceId
+ORDER BY vDate DESC
+LIMIT 2) t2
+
+ON t1.instanceId <> t2.instanceId AND t1.testId = t2.testId
