@@ -1,12 +1,12 @@
 INSERT INTO Doctor VALUES (1, 'Dr. Alfonso Medina Garza', NULL, 'Doctor General');
 
 INSERT INTO Patient VALUES (1, 'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05', 'Dr. Alfonso');
-INSERT INTO Visit VALUES (1, 1, 1, '2018-10-10', 'Suspects mild depression', NULL);
+INSERT INTO Visit VALUES (1, 1, 1, '2018-10-10', 'Suspects mild depression', 'Recommended check-up in a week');
 INSERT INTO Prescription VALUES (1, 1);
 
 
 INSERT INTO Patient VALUES (2, 'Margaret', 'Smith', 'F', '8187654321', 'Main Street', '64800', 'NL', 'Monterrey', '1986-08-10', 'Dr. Martinez');
-INSERT INTO Visit VALUES (2, 2, 1, '2018-10-11', 'Had panic attack', NULL);
+INSERT INTO Visit VALUES (2, 2, 1, '2018-10-11', 'Had panic attack', 'Patient needs more help');
 INSERT INTO Prescription VALUES (2, 2);
 
 INSERT INTO Patient VALUES (3, 'Hugh', 'Jackman', 'M', '5412345678', '2nd Street', '72100', 'NL', 'San Pedro', '1987-12-04', 'Dr. Fernandez');
