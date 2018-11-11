@@ -114,17 +114,6 @@ CREATE TABLE Response (
   FOREIGN KEY(instanceId) REFERENCES Instance(instanceId)
 );
 
-CREATE TABLE Doctor (
-  doctorId INT NOT NULL,
-  visitId INT NOT NULL,
-  doctorName VARCHAR(50) NOT NULL,
-  doctorAddress VARCHAR(500),
-  specialization VARCHAR(50),
-
-  PRIMARY KEY(doctorId),
-  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
-);
-
 CREATE TABLE Test_scale (
   lowLimit INT NOT NULL,
   highLimit INT,
