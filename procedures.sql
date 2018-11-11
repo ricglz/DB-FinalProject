@@ -35,6 +35,19 @@ FROM (
 ) t
 LEFT JOIN Test_scale ts ON ts.testId = t.testId AND puntuacion BETWEEN ts.lowLimit AND ts.highLimit
 
+--5.5 INPUT: Id
+--Mostrar examenes (con info de paciente)
+SELECT t.*, descriptor
+FROM (
+    SELECT p.patientId, fName, lName, sex, telephone, vDate, SUM(value) AS puntuacion, i.testId FROM Patient p
+    JOIN Visit v ON p.patientId = v.patientId
+    JOIN Instance i ON i.visitId = v.visitId
+    JOIN Response r ON r.instanceId = i.instanceId
+    WHERE i.instanceId = Id
+    GROUP BY i.instanceId
+) t
+LEFT JOIN Test_scale ts ON ts.testId = t.testId AND puntuacion BETWEEN ts.lowLimit AND ts.highLimit
+
 --6. INPUT: Id
 --Mostrar instancia de examen
 SELECT questionTitle, questionInstructions, value FROM Question q
