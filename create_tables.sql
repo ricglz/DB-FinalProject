@@ -14,15 +14,26 @@ CREATE TABLE Patient (
   PRIMARY KEY(patientId)
 )
 
+CREATE TABLE Doctor (
+  doctorId INT NOT NULL,
+  doctorName VARCHAR(50) NOT NULL,
+  doctorAddress VARCHAR(500),
+  specialization VARCHAR(50),
+
+  PRIMARY KEY(doctorId),
+)
+
 CREATE TABLE Visit (
   visitId INT NOT NULL,
   patientId INT NOT NULL,
+  doctorId INT NOT NULL,
   vDate DATE NOT NULL,
   motive VARCHAR(50) NOT NULL,
   resumen VARCHAR(500),
 
   PRIMARY KEY(visitId),
-  FOREIGN KEY(patientId) REFERENCES Patient(patientId)
+  FOREIGN KEY(patientId) REFERENCES Patient(patientId),
+  FOREIGN KEY(doctorId) REFERENCES Doctor(doctorId)
 )
 
 CREATE TABLE Medicament (
@@ -43,7 +54,6 @@ CREATE TABLE Prescription (
   PRIMARY KEY(prescriptionId),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId)
 )
-
 
 CREATE TABLE Diagnosis_details (
   visitId INT NOT NULL,
@@ -100,17 +110,6 @@ CREATE TABLE Response (
   PRIMARY KEY(responseId),
   FOREIGN KEY(questionId) REFERENCES Question(questionId),
   FOREIGN KEY(instanceId) REFERENCES Instance(instanceId)
-)
-
-CREATE TABLE Doctor (
-  doctorId INT NOT NULL,
-  visitId INT NOT NULL,
-  doctorName VARCHAR(50) NOT NULL,
-  doctorAddress VARCHAR(500),
-  specialization VARCHAR(50),
-
-  PRIMARY KEY(doctorId),
-  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
 )
 
 CREATE TABLE Test_scale (
