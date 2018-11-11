@@ -102,11 +102,12 @@ DELETE FROM Patient WHERE patientId = Id;
 
 --10. Mostrar las N medicinas mas recetadas y los laboratorios que las producen
 --Input: N
-SELECT TOP N m.medName, m.laboratory, COUNT(prescriptionId)
+SELECT m.medName, m.laboratory, COUNT(prescriptionId)
 FROM Medicament m
 JOIN Prescription_details pd ON m.medId = pd.medId
 GROUP BY m.medName, m.laboratory
 ORDER BY COUNT(prescriptionId) DESC
+LIMIT N;
 
 --11. Mostrar todos los pacientes que han recibido cierto diagnostico y cuando lo recibieron.
 --Input: dSearch (diagnostico a buscar)
