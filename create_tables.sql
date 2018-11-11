@@ -22,8 +22,8 @@ CREATE TABLE Doctor (
   doctorAddress VARCHAR(500),
   specialization VARCHAR(50),
 
-  PRIMARY KEY(doctorId),
-)
+  PRIMARY KEY(doctorId)
+);
 
 CREATE TABLE Visit (
   visitId INT NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE Visit (
   PRIMARY KEY(visitId),
   FOREIGN KEY(patientId) REFERENCES Patient(patientId),
   FOREIGN KEY(doctorId) REFERENCES Doctor(doctorId)
-)
+);
 
 CREATE TABLE Medicament (
   medId INT NOT NULL,
