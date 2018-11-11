@@ -168,3 +168,8 @@ INSERT INTO Test_scale VALUES (8, 13, 1, 'Depresion ligera/menor');
 INSERT INTO Test_scale VALUES (14, 18, 1, 'Depresion moderada');
 INSERT INTO Test_scale VALUES (19, 22, 1, 'Depresion severa');
 INSERT INTO Test_scale VALUES (23, 54, 1, 'Depresion muy severa');
+
+INSERT INTO Test_scale VALUES (0, 17, 2, 'Ansiedad leve');
+INSERT INTO Test_scale VALUES (18, 24, 2, 'Ansiedad moderada');
+INSERT INTO Test_scale VALUES (25, 30, 2, 'Ansiedad severa');
+INSERT INTO Test_scale VALUES (30, 56, 2, 'Ansiedad muy severa');

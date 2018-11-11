@@ -119,6 +119,6 @@ CREATE TABLE Test_scale (
   testId INT NOT NULL,
   descriptor VARCHAR(30),
 
-  PRIMARY KEY(lowLimit),
+  PRIMARY KEY(lowLimit, testId),
   FOREIGN KEY(testId) REFERENCES Test(testId)
 )
