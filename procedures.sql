@@ -72,6 +72,7 @@ SELECT * FROM Patient
 WHERE fName = patientName OR lName = patientName 
     OR fname + lName = patientName
 
+--9. Input: Id
 --Delete Patient EHR
 DELETE FROM Prescription_details WHERE prescriptionId IN (
     SELECT prescriptionId FROM Visit
@@ -99,3 +100,24 @@ DELETE FROM Visit WHERE patientId = Id;
 
 DELETE FROM Patient WHERE patientId = Id;
 
+--10. Mostrar las N medicinas mas recetadas y los laboratorios que las producen
+--Input: N
+SELECT m.medName, m.laboratory, COUNT(prescriptionId)
+FROM Medicament m
+JOIN Prescription_details pd ON m.medId = pd.medId
+GROUP BY m.medName, m.laboratory
+HAVING COUNT(prescriptionId) IN
+	(SELECT TOP N COUNT(prescriptionId)
+	FROM Prescription_details
+	GROUP BY medId
+	ORDER BY COUNT(prescriptionId) DESC)
+ORDER BY COUNT(prescriptionId) DESC
+
+--11. Mostrar todos los pacientes que han recibido cierto diagnostico y cuando lo recibieron.
+--Input: dSearch (diagnostico a buscar)
+SELECT p.patientId, p.fName, p.lName, v.vDate AS Date
+FROM Visit v 
+JOIN Diagnosis_details dd ON v.visitId = dd.visitId
+JOIN Patient p ON v.patientId = p.patientId
+WHERE dCode = dSearch
+ORDER BY vDate DESC
