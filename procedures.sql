@@ -6,7 +6,7 @@ WHERE patientId = Id
 --2. INPUT: Id
 --Mostrar las visitas
 SELECT visitId, vDate, motive AS 'P.E.E.A.', resumen FROM Visit
-WHERE patientId = Id 
+WHERE patientId = Id
 
 --3. INPUT: Id
 --Mostrar los diagnosticos
@@ -69,7 +69,7 @@ LEFT JOIN Test_scale ts ON ts.testId = t.testId AND puntuacion BETWEEN ts.lowLim
 --8. Input: patientName
 --Mostrar datos con nombre patientName
 SELECT * FROM Patient
-WHERE fName = patientName OR lName = patientName 
+WHERE fName = patientName OR lName = patientName
     OR fname + lName = patientName
 
 --9. Input: Id
@@ -78,45 +78,40 @@ DELETE FROM Prescription_details WHERE prescriptionId IN (
     SELECT prescriptionId FROM Visit
     JOIN Prescription ON Visit.visitId = Prescription.visitId
     WHERE Visit.patientId = Id);
-    
+
 DELETE FROM Prescription WHERE visitId IN (
     SELECT visitId FROM Visit
     WHERE Visit.patientId = Id);
-    
+
 DELETE FROM Diagnosis_details WHERE visitId IN (
     SELECT visitId FROM Visit
     WHERE Visit.patientId = Id);
-    
+
 DELETE FROM Response WHERE instanceId IN (
     SELECT instanceId FROM Visit
     JOIN Instance ON Visit.visitId = Instance.visitId
     WHERE Visit.patientId = Id);
-    
+
 DELETE FROM Instance WHERE visitId IN (
     SELECT visitId FROM Visit
     WHERE Visit.patientId = Id);
-    
+
 DELETE FROM Visit WHERE patientId = Id;
 
 DELETE FROM Patient WHERE patientId = Id;
 
 --10. Mostrar las N medicinas mas recetadas y los laboratorios que las producen
 --Input: N
-SELECT m.medName, m.laboratory, COUNT(prescriptionId)
+SELECT TOP N m.medName, m.laboratory, COUNT(prescriptionId)
 FROM Medicament m
 JOIN Prescription_details pd ON m.medId = pd.medId
 GROUP BY m.medName, m.laboratory
-HAVING COUNT(prescriptionId) IN
-	(SELECT TOP N COUNT(prescriptionId)
-	FROM Prescription_details
-	GROUP BY medId
-	ORDER BY COUNT(prescriptionId) DESC)
 ORDER BY COUNT(prescriptionId) DESC
 
 --11. Mostrar todos los pacientes que han recibido cierto diagnostico y cuando lo recibieron.
 --Input: dSearch (diagnostico a buscar)
 SELECT p.patientId, p.fName, p.lName, v.vDate AS Date
-FROM Visit v 
+FROM Visit v
 JOIN Diagnosis_details dd ON v.visitId = dd.visitId
 JOIN Patient p ON v.patientId = p.patientId
 WHERE dCode = dSearch

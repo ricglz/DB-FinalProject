@@ -1,3 +1,5 @@
+-- Add diagnosis from csv and make sure that dCode is primary key
+
 CREATE TABLE Patient (
   patientId INT NOT NULL,
   fName VARCHAR(50) NOT NULL,
@@ -12,7 +14,7 @@ CREATE TABLE Patient (
   referral VARCHAR(50),
 
   PRIMARY KEY(patientId)
-)
+);
 
 CREATE TABLE Doctor (
   doctorId INT NOT NULL,
@@ -45,7 +47,7 @@ CREATE TABLE Medicament (
   laboratory VARCHAR(50) not NULL,
 
   PRIMARY KEY(medId)
-)
+);
 
 CREATE TABLE Prescription (
   prescriptionId INT NOT NULL,
@@ -53,7 +55,7 @@ CREATE TABLE Prescription (
 
   PRIMARY KEY(prescriptionId),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId)
-)
+);
 
 CREATE TABLE Diagnosis_details (
   visitId INT NOT NULL,
@@ -62,7 +64,7 @@ CREATE TABLE Diagnosis_details (
   PRIMARY KEY(visitId, dCode),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId),
   FOREIGN KEY(dCode) REFERENCES Diagnosis(dCode)
-)
+);
 
 CREATE TABLE Prescription_details (
   prescriptionId INT NOT NULL,
@@ -72,14 +74,14 @@ CREATE TABLE Prescription_details (
   PRIMARY KEY(prescriptionId, medId),
   FOREIGN KEY(prescriptionId) REFERENCES Prescription(prescriptionId),
   FOREIGN KEY(medId) REFERENCES Medicament(medId)
-)
+);
 
 CREATE TABLE Test (
   testId INT NOT NULL,
   testName VARCHAR(20),
 
   PRIMARY KEY(testId)
-)
+);
 
 CREATE TABLE Instance (
   instanceId INT NOT NULL,
@@ -89,7 +91,7 @@ CREATE TABLE Instance (
   PRIMARY KEY(instanceId),
   FOREIGN KEY(testId) REFERENCES Test(testId),
   FOREIGN KEY(visitId) REFERENCES Visit(visitId)
-)
+);
 
 CREATE TABLE Question (
   questionId INT NOT NULL,
@@ -99,7 +101,7 @@ CREATE TABLE Question (
 
   PRIMARY KEY(questionId),
   FOREIGN KEY(testId) REFERENCES Test(testId)
-)
+);
 
 CREATE TABLE Response (
   responseId INT NOT NULL,
@@ -110,7 +112,18 @@ CREATE TABLE Response (
   PRIMARY KEY(responseId),
   FOREIGN KEY(questionId) REFERENCES Question(questionId),
   FOREIGN KEY(instanceId) REFERENCES Instance(instanceId)
-)
+);
+
+CREATE TABLE Doctor (
+  doctorId INT NOT NULL,
+  visitId INT NOT NULL,
+  doctorName VARCHAR(50) NOT NULL,
+  doctorAddress VARCHAR(500),
+  specialization VARCHAR(50),
+
+  PRIMARY KEY(doctorId),
+  FOREIGN KEY(visitId) REFERENCES Visit(visitId)
+);
 
 CREATE TABLE Test_scale (
   lowLimit INT NOT NULL,
@@ -120,4 +133,4 @@ CREATE TABLE Test_scale (
 
   PRIMARY KEY(lowLimit, testId),
   FOREIGN KEY(testId) REFERENCES Test(testId)
-)
+);
