@@ -16,16 +16,27 @@ CREATE TABLE Patient (
   PRIMARY KEY(patientId)
 );
 
+CREATE TABLE Doctor (
+  doctorId INT NOT NULL,
+  doctorName VARCHAR(50) NOT NULL,
+  doctorAddress VARCHAR(500),
+  specialization VARCHAR(50),
+
+  PRIMARY KEY(doctorId),
+)
+
 CREATE TABLE Visit (
   visitId INT NOT NULL,
   patientId INT NOT NULL,
+  doctorId INT NOT NULL,
   vDate DATE NOT NULL,
   motive VARCHAR(50) NOT NULL,
   resumen VARCHAR(500),
 
   PRIMARY KEY(visitId),
-  FOREIGN KEY(patientId) REFERENCES Patient(patientId)
-);
+  FOREIGN KEY(patientId) REFERENCES Patient(patientId),
+  FOREIGN KEY(doctorId) REFERENCES Doctor(doctorId)
+)
 
 CREATE TABLE Medicament (
   medId INT NOT NULL,
