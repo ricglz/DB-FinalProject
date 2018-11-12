@@ -128,7 +128,7 @@ SELECT p.patientId, fName, lName, SUM(value) AS puntuacion FROM Patient p
     WHERE i.testId = tId
     GROUP BY i.instanceId
     HAVING puntuacion >= ALL
-    
+
     (SELECT AVG(puntuacion) FROM (
      SELECT SUM(value) AS puntuacion FROM Response r
      JOIN Instance i ON r.instanceId = i.instanceId
@@ -177,7 +177,7 @@ LIMIT 1
 SELECT Doctor.doctorId, Doctor.doctorName, COUNT(*) AS NumeroDeConsultas
 FROM Doctor
 LEFT JOIN Visit ON Visit.doctorId = Doctor.doctorId
-GROUP BY Doctor.doctorId  
+GROUP BY Doctor.doctorId
 ORDER BY NumeroDeConsultas  DESC
 
 --16 Busqueda de doctores por nombre
@@ -188,6 +188,18 @@ WHERE doctorName LIKE CONCAT('%',nameSearch,'%')
 
 --17 Busqueda de pacientes por nombre
 --Input: nameSearch
-SELECT * 
+SELECT *
 FROM Patient
 WHERE CONCAT(fName,lName) LIKE CONCAT('%', nameSearch, '%')
+
+--19. Mostrar las N medicinas mas recetadas de hoy
+--Input: N
+SELECT m.medName, COUNT(prescriptionId)
+FROM Medicament m
+JOIN Prescription_details pd ON m.medId = pd.medId
+JOIN Prescription p ON pd.prescripti  onId = p.prescriptionId
+JOIN Visit v ON p.visitId = v.visitId
+GROUP BY m.medName, m.laboratory
+ORDER BY COUNT(prescriptionId) DESC
+WHERE DATE(vDate) = DATE(NOW())
+LIMIT N;
