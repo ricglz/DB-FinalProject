@@ -158,3 +158,17 @@ ORDER BY vDate DESC
 LIMIT 2) t2
 
 ON t1.instanceId <> t2.instanceId AND t1.testId = t2.testId
+
+--14. Medicina más recetada por diagnóstico
+--Input: dC
+SELECT D.dCode,  M.medId,  COUNT(M.medId) as medicamentCount
+FROM Diagnosis D
+JOIN Diagnosis_details DD ON D.dCode = DD.dCode
+JOIN Visit V ON DD.visitId = V.visitId
+JOIN Prescription P ON P.visitId = V.visitId
+JOIN Prescription_details PD ON P.prescriptionId = PD.prescriptionId
+JOIN Medicament M ON PD.medId = M.medId
+WHERE D.dCode = dC
+GROUP BY medId
+ORDER BY medicamentCount DESC
+LIMIT 1
