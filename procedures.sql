@@ -179,3 +179,15 @@ FROM Doctor
 LEFT JOIN Visit ON Visit.doctorId = Doctor.doctorId
 GROUP BY Doctor.doctorId  
 ORDER BY NumeroDeConsultas  DESC
+
+--16 Busqueda de doctores por nombre
+--Input: nameSearch
+SELECT *
+FROM Doctor
+WHERE doctorName LIKE CONCAT('%',nameSearch,'%')
+
+--17 Busqueda de pacientes por nombre
+--Input: nameSearch
+SELECT * 
+FROM Patient
+WHERE CONCAT(fName,lName) LIKE CONCAT('%', nameSearch, '%')
