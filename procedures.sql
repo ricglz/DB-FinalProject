@@ -172,3 +172,10 @@ WHERE D.dCode = dC
 GROUP BY medId
 ORDER BY medicamentCount DESC
 LIMIT 1
+
+--15. Doctores ordenados por numero de visitas
+SELECT Doctor.doctorId, Doctor.doctorName, COUNT(*) AS NumeroDeConsultas
+FROM Doctor
+LEFT JOIN Visit ON Visit.doctorId = Doctor.doctorId
+GROUP BY Doctor.doctorId  
+ORDER BY NumeroDeConsultas  DESC
