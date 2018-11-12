@@ -1,4 +1,8 @@
 INSERT INTO Doctor VALUES (1, 'Dr. Alfonso Medina Garza', NULL, 'Doctor General');
+INSERT INTO Doctor VALUES (2, 'Dr. Roberto Lopez Garcia', NULL, 'Dermatologia')
+INSERT INTO Doctor VALUES (3, 'Dra. Laura Medina Garza', NULL, 'Neurologia')
+INSERT INTO Doctor VALUES (4, 'Dra. Sofia Rodriguez Garza', NULL, 'Dermatologia')
+INSERT INTO Doctor VALUES (5, 'Dra. Sandra Marina Ortiz', NULL, 'Neurologia')
 
 INSERT INTO Patient VALUES (1, 'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05', 'Dr. Alfonso');
 INSERT INTO Visit VALUES (1, 1, 1, '2018-10-10', 'Suspects mild depression', 'Recommended check-up in a week');
