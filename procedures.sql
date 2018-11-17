@@ -245,3 +245,13 @@ FROM Visit v
 WHERE v.vDate BETWEEN dateMIN AND dateMAX)
 GROUP BY p.fName, p.lName
 ORDER BY COUNT(*) DESC
+
+--23. Mostrar prescripción dado el prescriptionId
+--Input: pId
+SELECT PAT.fName, PAT.lName, M.medName, PD.instructions
+FROM Prescription P
+JOIN Visit V ON P.visitId = V.visitId
+JOIN Patient PAT ON V.patientId = PAT.patientId 
+JOIN Prescription_details PD ON P.prescriptionId = PD.prescriptionId
+JOIN Medicament M ON PD.medId = M.medId
+WHERE P.prescriptionId = pId
