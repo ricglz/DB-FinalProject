@@ -160,8 +160,8 @@ LIMIT 2) t2
 ON t1.instanceId <> t2.instanceId AND t1.testId = t2.testId
 
 --14. Medicina más recetada por diagnóstico
---Input: dC
-SELECT D.dCode,  M.medId,  COUNT(M.medId) as medicamentCount
+--Input: dC, N
+SELECT m.medName, m.laboratory,  COUNT(M.medId) as medicamentCount
 FROM Diagnosis D
 JOIN Diagnosis_details DD ON D.dCode = DD.dCode
 JOIN Visit V ON DD.visitId = V.visitId
@@ -169,9 +169,9 @@ JOIN Prescription P ON P.visitId = V.visitId
 JOIN Prescription_details PD ON P.prescriptionId = PD.prescriptionId
 JOIN Medicament M ON PD.medId = M.medId
 WHERE D.dCode = dC
-GROUP BY medId
+GROUP BY m.medId
 ORDER BY medicamentCount DESC
-LIMIT 1
+LIMIT N
 
 --15. Doctores ordenados por numero de visitas
 SELECT Doctor.doctorId, Doctor.doctorName, COUNT(*) AS NumeroDeConsultas
@@ -194,12 +194,12 @@ WHERE CONCAT(fName,lName) LIKE CONCAT('%', nameSearch, '%')
 
 --19. Mostrar las N medicinas mas recetadas de hoy
 --Input: N
-SELECT m.medName, COUNT(prescriptionId)
+SELECT m.medName, COUNT(pd.prescriptionId)
 FROM Medicament m
 JOIN Prescription_details pd ON m.medId = pd.medId
-JOIN Prescription p ON pd.prescripti  onId = p.prescriptionId
+JOIN Prescription p ON pd.prescriptionId = p.prescriptionId
 JOIN Visit v ON p.visitId = v.visitId
-GROUP BY m.medName, m.laboratory
-ORDER BY COUNT(prescriptionId) DESC
 WHERE DATE(vDate) = DATE(NOW())
+GROUP BY m.medName, m.laboratory
+ORDER BY COUNT(pd.prescriptionId) DESC
 LIMIT N;
