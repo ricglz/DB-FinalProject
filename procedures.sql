@@ -203,3 +203,45 @@ WHERE DATE(vDate) = DATE(NOW())
 GROUP BY m.medName, m.laboratory
 ORDER BY COUNT(pd.prescriptionId) DESC
 LIMIT N;
+
+--20. Mostrar cantidad de veces que se hizo un diagnostico entre 2 fechas
+--Input: dateMIN, dateMAX
+SELECT d.ICD9CM, d.ICD10CM, d.DSM5, COUNT(*)
+FROM Diagnosis d
+WHERE d.dCode IN
+(SELECT dd.dCode
+FROM Diagnosis_details dd
+WHERE dd.visitId IN
+(SELECT v.visitId
+FROM Visit v
+WHERE v.vDate BETWEEN dateMIN AND dateMAX))
+GROUP BY d.dCode, d.ICD9CM, d.ICD10CM, d.DSM5
+ORDER BY COUNT(*) DESC
+
+--21. Mostrar cantidad de veces que se receto una medicina entre 2 fechas
+--Input: dateMIN, dateMAX
+SELECT m.medName, m.laboratory, COUNT(*)
+FROM Medicament m
+WHERE medId IN
+(SELECT pd.medId
+FROM Prescription_details pd
+WHERE pd.prescriptionId IN 
+(SELECT p.prescriptionId
+FROM Prescription p
+WHERE p.visitId IN 
+(SELECT v.visitId
+FROM Visit v
+WHERE v.vDate BETWEEN dateMIN AND dateMAX)))
+GROUP BY m.medName, m.laboratory
+ORDER BY COUNT(*) DESC
+
+--22. Mostrar cantidad de visitas por paciente entre 2 fechas
+--Input: dateMIN, dateMAX
+SELECT p.fName, p.lName, COUNT(*)
+FROM Patient p
+WHERE p.patientId IN
+(SELECT v.patientId
+FROM Visit v
+WHERE v.vDate BETWEEN dateMIN AND dateMAX)
+GROUP BY p.fName, p.lName
+ORDER BY COUNT(*) DESC
