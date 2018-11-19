@@ -208,13 +208,9 @@ LIMIT N;
 --Input: dateMIN, dateMAX
 SELECT d.ICD9CM, d.ICD10CM, d.DSM5, COUNT(*)
 FROM Diagnosis d
-WHERE d.dCode IN
-(SELECT dd.dCode
-FROM Diagnosis_details dd
-WHERE dd.visitId IN
-(SELECT v.visitId
-FROM Visit v
-WHERE v.vDate BETWEEN dateMIN AND dateMAX))
+JOIN Diagnosis_details dd ON d.dCode = dd.dCode
+JOIN Visit v ON dd.visitId = v.visitId
+WHERE v.vDate BETWEEN dateMIN AND dateMAX
 GROUP BY d.dCode, d.ICD9CM, d.ICD10CM, d.DSM5
 ORDER BY COUNT(*) DESC
 
@@ -222,16 +218,10 @@ ORDER BY COUNT(*) DESC
 --Input: dateMIN, dateMAX
 SELECT m.medName, m.laboratory, COUNT(*)
 FROM Medicament m
-WHERE medId IN
-(SELECT pd.medId
-FROM Prescription_details pd
-WHERE pd.prescriptionId IN 
-(SELECT p.prescriptionId
-FROM Prescription p
-WHERE p.visitId IN 
-(SELECT v.visitId
-FROM Visit v
-WHERE v.vDate BETWEEN dateMIN AND dateMAX)))
+JOIN Prescription_details pd ON m.medId = pd.medId
+JOIN Prescription p ON pd.prescriptionId = p.prescriptionId
+JOIN Visit v ON p.visitId = v.visitId
+WHERE v.vDate BETWEEN dateMIN AND dateMAX
 GROUP BY m.medName, m.laboratory
 ORDER BY COUNT(*) DESC
 
@@ -239,10 +229,8 @@ ORDER BY COUNT(*) DESC
 --Input: dateMIN, dateMAX
 SELECT p.fName, p.lName, COUNT(*)
 FROM Patient p
-WHERE p.patientId IN
-(SELECT v.patientId
-FROM Visit v
-WHERE v.vDate BETWEEN dateMIN AND dateMAX)
+JOIN Visit v ON p.patientId = v.patientId
+WHERE v.vDate BETWEEN dateMIN AND dateMAX
 GROUP BY p.fName, p.lName
 ORDER BY COUNT(*) DESC
 
