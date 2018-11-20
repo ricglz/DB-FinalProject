@@ -1,8 +1,8 @@
 INSERT INTO Doctor VALUES (1, 'Dr. Alfonso Medina Garza', NULL, 'Doctor General');
-INSERT INTO Doctor VALUES (2, 'Dr. Roberto Lopez Garcia', NULL, 'Dermatologia')
-INSERT INTO Doctor VALUES (3, 'Dra. Laura Medina Garza', NULL, 'Neurologia')
-INSERT INTO Doctor VALUES (4, 'Dra. Sofia Rodriguez Garza', NULL, 'Dermatologia')
-INSERT INTO Doctor VALUES (5, 'Dra. Sandra Marina Ortiz', NULL, 'Neurologia')
+INSERT INTO Doctor VALUES (2, 'Dr. Roberto Lopez Garcia', NULL, 'Dermatologia');
+INSERT INTO Doctor VALUES (3, 'Dra. Laura Medina Garza', NULL, 'Neurologia');
+INSERT INTO Doctor VALUES (4, 'Dra. Sofia Rodriguez Garza', NULL, 'Dermatologia');
+INSERT INTO Doctor VALUES (5, 'Dra. Sandra Marina Ortiz', NULL, 'Neurologia');
 
 INSERT INTO Patient VALUES (1, 'John', 'Smith', 'M', '8112345678', 'Main Street', '64800', 'NL', 'Monterrey', '1986-04-05', 'Dr. Alfonso');
 INSERT INTO Visit VALUES (1, 1, 1, '2018-10-10', 'Suspects mild depression', 'Recommended check-up in a week');
@@ -191,3 +191,45 @@ INSERT INTO Response VALUES (6056, 202, 1033, 2);
 INSERT INTO Response VALUES (6057, 203, 1033, 2);
 INSERT INTO Response VALUES (6058, 204, 1033, 2);
 INSERT INTO Response VALUES (6059, 205, 1033, 1);
+
+
+
+--Probar borrar paciente
+INSERT INTO Patient VALUES (100, 'Julio', 'Ramirez', 'M', '8145454545', 'Calle', '64800', 'NL', 'Monterrey', '1998-08-10', 'Dr. Martinez');
+INSERT INTO Visit VALUES (100, 100, 2, '2018-10-10', 'Sospecha algo', 'Recomienda venir mañana');
+INSERT INTO Prescription VALUES (100, 100);
+INSERT INTO Prescription_details VALUES (100, 1, 'Tomar 20mg cada 7 horas');
+INSERT INTO Diagnosis_details VALUES (100, 500);
+INSERT INTO Instance VALUES (1100, 1, 100);
+INSERT INTO Instance VALUES (1101, 2, 100);
+
+INSERT INTO Response VALUES (6150, 101, 1100, 2);
+INSERT INTO Response VALUES (6151, 102, 1100, 2);
+INSERT INTO Response VALUES (6152, 103, 1100, 3);
+INSERT INTO Response VALUES (6153, 104, 1100, 1);
+INSERT INTO Response VALUES (6154, 105, 1100, 0);
+INSERT INTO Response VALUES (6155, 201, 1101, 3);
+INSERT INTO Response VALUES (6156, 202, 1101, 2);
+INSERT INTO Response VALUES (6157, 203, 1101, 2);
+INSERT INTO Response VALUES (6158, 204, 1101, 2);
+INSERT INTO Response VALUES (6159, 205, 1101, 1);
+
+
+INSERT INTO Visit VALUES (101, 100, 2, '2018-10-11', 'Sospecha otra cosa', 'Vino');
+INSERT INTO Prescription VALUES (101, 101);
+INSERT INTO Prescription_details VALUES (101, 2, 'Tomar 30mg cada 7 horas');
+INSERT INTO Diagnosis_details VALUES (101, 501);
+INSERT INTO Instance VALUES (1102, 1, 101);
+INSERT INTO Instance VALUES (1103, 2, 101);
+
+INSERT INTO Response VALUES (6250, 101, 1102, 2);
+INSERT INTO Response VALUES (6251, 102, 1102, 2);
+INSERT INTO Response VALUES (6252, 103, 1102, 3);
+INSERT INTO Response VALUES (6253, 104, 1102, 1);
+INSERT INTO Response VALUES (6254, 105, 1102, 0);
+INSERT INTO Response VALUES (6255, 201, 1103, 3);
+INSERT INTO Response VALUES (6256, 202, 1103, 2);
+INSERT INTO Response VALUES (6257, 203, 1103, 2);
+INSERT INTO Response VALUES (6258, 204, 1103, 2);
+INSERT INTO Response VALUES (6259, 205, 1103, 1);
+
