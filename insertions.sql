@@ -54,6 +54,71 @@ INSERT INTO Question VALUES (105, 'Insomnio intermedio','0. No hay dificultad
   2. Esta despierto durante la noche, cualquier ocasión de levantarse de la cama se clasifica
 en 2 (excepto por motivos de evacuar)', 1);
 
+INSERT INTO Question VALUES (106, 'Insomnio tardío','0. No hay dificultad
+	1. Se despierta a primeras horas de la madrugada, pero se vuelve a dormir
+	2. No puede volver a dormirse si se levanta de la cama', 1);
+
+INSERT INTO Question VALUES (107, 'Trabajo y actividades','0. No hay dificultad
+	1. Ideas y sentimientos de incapacidad, fatiga o debilidad (trabajos, pasatiempos)
+	2. Pérdida de interés en su actividad (disminución de la atención, indecisión y vacilación)
+	3. Disminución del tiempo actual dedicado a actividades o disminución de la productividad
+	4. Dejó de trabajar por la presente enfermedad. Solo se compromete en las pequeñas
+tareas, o no puede realizar estas sin ayuda.', 1);
+
+INSERT INTO Question VALUES (108, 'Inhibición psicomotora (lentitud de pensamiento y lenguaje, facultad de
+concentración disminuida, disminución de la actividad motora)','0. Palabra y pensamiento normales
+	1. Ligero retraso en el habla
+	2. Evidente retraso en el habla
+	3. Dificultad para expresarse
+	4. Incapacidad para expresarse', 1);
+
+INSERT INTO Question VALUES (109, 'Agitación psicomotora','0. Ninguna
+	1. Juega con sus dedos
+	2. Juega con sus manos, cabello, etc.
+	3. No puede quedarse quieto ni permanecer sentado
+	4. Retuerce las manos, se muerde las uñas, se tira de los cabellos, se muerde los labios', 1);
+
+INSERT INTO Question VALUES (110, 'Ansiedad psíquica','0. No hay dificultad
+	1. Tensión subjetiva e irritabilidad
+	2. Preocupación por pequeñas cosas
+	3. Actitud aprensiva en la expresión o en el habla
+	4. Expresa sus temores sin que le pregunten', 1);
+
+INSERT INTO Question VALUES (111, 'Ansiedad somática','0. Ausente
+	1. Ligera
+	2. Moderada
+	3. Severa
+	4. Incapacitante', 1);
+
+INSERT INTO Question VALUES (112, 'Síntomas somáticos gastrointestinales','0. Ninguno
+	1. Pérdida del apetito pero come sin necesidad de que lo estimulen.
+	2. Sensación de pesadez en el abdomen
+	3. Dificultad en comer si no se le insiste.
+	4. Solicita laxantes o medicación intestinal para sus síntomas gastrointestinales', 1);
+
+INSERT INTO Question VALUES (113, 'Síntomas somáticos generales','0. Ninguno
+	1. Pesadez en las extremidades, espalda o cabeza. Dorsalgias. Cefaleas, algias musculares.
+	2. Pérdida de energía y fatigabilidad. Cualquier síntoma bien definido se clasifica en 2', 1);
+
+INSERT INTO Question VALUES (114, 'Síntomas genitales (tales como: disminución de la libido y trastornos menstruales)','0. Ausente
+	1. Débil
+	2. Grave', 1);
+
+INSERT INTO Question VALUES (115, 'Hipocondría','0. Ausente
+	1. Preocupado de si mismo (corporalmente)
+	2. Preocupado por su salud
+	3. Se lamenta constantemente, solicita ayuda', 1);
+
+INSERT INTO Question VALUES (116, 'Pérdida de peso','0. Pérdida de peso inferior a 500 gr. en una semana
+	1. Pérdida de más de 500 gr. en una semana
+	2. Pérdida de más de 1 Kg. en una semana', 1);
+
+INSERT INTO Question VALUES (117, 'Introspeccción (insight)','0. Se da cuenta que esta deprimido y enfermo
+	1-2. Se da cuenta de su enfermedad pero atribuye la causa a la mala alimentación, clima,
+exceso de trabajo, virus, necesidad de descanso, etc.
+	3. No se da cuenta que está enfermo', 1);
+
+
 INSERT INTO Question VALUES (201, 'Estado de ánimo ansioso','0. Ausente 
   1. Leve 
   2. Moderado 
@@ -83,6 +148,61 @@ INSERT INTO Question VALUES (205, 'Intelectual','0. Ausente
   2. Moderado 
   3. Grave 
   4. Muy grave/Incapacitante', 2);
+
+INSERT INTO QUESTION VALUES (206, 'Estado de ánimo deprimido', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO QUESTION VALUES (207, 'Síntomas somáticos generales (musculares)', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO QUESTION VALUES (208, 'Síntomas somáticos generales (sensoriales)', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO QUESTION VALUES (209, 'Síntomas cardiovasculares', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO QUESTION VALUES (210, 'Síntomas respiratorios', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO QUESTION VALUES (211, 'Síntomas gastrointestinales', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO QUESTION VALUES (212, 'Síntomas genitourinarios', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO QUESTION VALUES (213, 'Síntomas autónomos', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
+
+INSERT INTO QUESTION VALUES (214, 'Comportamiento en la entrevista (general y
+fisiológico)', '0. Ausente 
+  1. Leve 
+  2. Moderado 
+  3. Grave 
+  4. Muy grave/Incapacitante', 2)
 
 INSERT INTO Instance VALUES (1024, 1, 1);
 INSERT INTO Instance VALUES (1025, 2, 1);
