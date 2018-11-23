@@ -243,3 +243,23 @@ JOIN Patient PAT ON V.patientId = PAT.patientId
 JOIN Prescription_details PD ON P.prescriptionId = PD.prescriptionId
 JOIN Medicament M ON PD.medId = M.medId
 WHERE P.prescriptionId = pId
+
+--24. Mostrar el diagnostico mas frecuente para pacientes entre 2 edades
+--By Pedro Villezca
+--Input: AGE1, AGE2
+SELECT *
+FROM Diagnosis
+WHERE dCode IN
+(SELECT dd.dCode
+FROM Visit v
+JOIN Patient p ON v.patientId = p.patientId
+JOIN Diagnosis_details dd ON dd.visitId = v.visitId
+WHERE (0+CONVERT(Char(8), v.vDate,112)-CONVERT(Char(8), p.birthDate, 112))/10000 BETWEEN AGE1 AND AGE2
+GROUP BY dd.dCode
+HAVING COUNT(dd.visitId) >= ALL
+(SELECT COUNT(dd.visitId)
+FROM Visit v
+JOIN Patient p ON v.patientId = p.patientId
+JOIN Diagnosis_details dd ON dd.visitId = v.visitId
+WHERE (0+CONVERT(Char(8), v.vDate,112)-CONVERT(Char(8), p.birthDate, 112))/10000 BETWEEN AGE1 AND AGE2
+GROUP BY dd.dCode))
