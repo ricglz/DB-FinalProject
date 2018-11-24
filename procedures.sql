@@ -254,12 +254,12 @@ WHERE dCode IN
 FROM Visit v
 JOIN Patient p ON v.patientId = p.patientId
 JOIN Diagnosis_details dd ON dd.visitId = v.visitId
-WHERE (0+CONVERT(Char(8), v.vDate,112)-CONVERT(Char(8), p.birthDate, 112))/10000 BETWEEN AGE1 AND AGE2
+WHERE (0+DATE_FORMAT(v.vDate, '%Y%m%d')-DATE_FORMAT(p.birthDate, '%Y%m%d'))/10000 BETWEEN AGE1 AND AGE2
 GROUP BY dd.dCode
 HAVING COUNT(dd.visitId) >= ALL
 (SELECT COUNT(dd.visitId)
 FROM Visit v
 JOIN Patient p ON v.patientId = p.patientId
 JOIN Diagnosis_details dd ON dd.visitId = v.visitId
-WHERE (0+CONVERT(Char(8), v.vDate,112)-CONVERT(Char(8), p.birthDate, 112))/10000 BETWEEN AGE1 AND AGE2
+WHERE (0+DATE_FORMAT(v.vDate, '%Y%m%d')-DATE_FORMAT(p.birthDate, '%Y%m%d'))/10000 BETWEEN AGE1 AND AGE2
 GROUP BY dd.dCode))
