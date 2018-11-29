@@ -114,12 +114,12 @@ LIMIT N;
 
 --11. Mostrar todos los pacientes que han recibido cierto diagnostico y cuando lo recibieron.
 --Input: dSearch (diagnostico a buscar)
-SELECT p.patientId, p.fName, p.lName, v.vDate AS Date, CAST(((vDate)-DATE_FORMAT(birthDate, '%Y%m%d'))/10000 AS DECIMAL(10,0)) AS Edad
+SELECT p.patientId, CONCAT(p.fName, ' ', p.lName) AS 'Nombre Completo', v.vDate AS Date, CAST(((vDate)-DATE_FORMAT(birthDate, '%Y%m%d'))/10000 AS DECIMAL(10,0)) AS Edad, ICD9CM, ICD10CM, DSM5
 FROM Visit v
 JOIN Diagnosis_details dd ON v.visitId = dd.visitId
+JOIN Diagnosis d ON dd.dCode = d.dCode
 JOIN Patient p ON v.patientId = p.patientId
-JOIN Doctor doc ON v.doctorId = doc.doctorId
-WHERE dCode = dSearch
+WHERE d.dCode = dSearch
 ORDER BY vDate DESC
 
 
