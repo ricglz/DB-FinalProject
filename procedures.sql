@@ -59,9 +59,11 @@ WHERE instanceId = Id
 --Mostrar examenes con puntuacion minima k
 SELECT t.*, descriptor
 FROM (
-    SELECT i.instanceId, i.testId, vDate, SUM(value) AS puntuacion
+    SELECT i.instanceId, i.testId, vDate, SUM(value) AS puntuacion, CONCAT(fName, ' ', lName) AS 'Nombre Paciente', CAST(((vDate)-DATE_FORMAT(birthDate, '%Y%m%d'))/10000 AS DECIMAL(10,0)) AS Edad, doctorName
     FROM Response r JOIN Instance i ON r.instanceId = i.instanceId
     JOIN Visit v ON i.visitId = v.visitId
+    JOIN Patient pat ON pat.patientId = v.patientId
+    JOIN Doctor d ON d.doctorId = v.doctorId
     GROUP BY instanceId
     HAVING puntuacion >= patientScore
 ) t
@@ -112,10 +114,11 @@ LIMIT N;
 
 --11. Mostrar todos los pacientes que han recibido cierto diagnostico y cuando lo recibieron.
 --Input: dSearch (diagnostico a buscar)
-SELECT p.patientId, p.fName, p.lName, v.vDate AS Date
+SELECT p.patientId, p.fName, p.lName, v.vDate AS Date, CAST(((vDate)-DATE_FORMAT(birthDate, '%Y%m%d'))/10000 AS DECIMAL(10,0)) AS Edad
 FROM Visit v
 JOIN Diagnosis_details dd ON v.visitId = dd.visitId
 JOIN Patient p ON v.patientId = p.patientId
+JOIN Doctor doc ON v.doctorId = doc.doctorId
 WHERE dCode = dSearch
 ORDER BY vDate DESC
 
