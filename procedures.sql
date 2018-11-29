@@ -17,7 +17,7 @@ WHERE v.patientId = Id
 
 --4. INPUT: Id
 --Mostrar medicinas recetadas
-SELECT v.visitId, CAST(((vDate)-DATE_FORMAT(birthDate, '%Y%m%d'))/10000 AS DECIMAL(10,0)) AS Edad, medName, ingredientName, quantity, typeOfDosis, laboratory, instructions
+SELECT v.visitId, CAST(((vDate)-DATE_FORMAT(birthDate, '%Y%m%d'))/10000 AS DECIMAL(10,0)) AS Edad, vDate, medName, ingredientName, quantity, typeOfDosis, laboratory, instructions
 FROM Visit v JOIN Prescription p ON v.visitId = p.visitId
 JOIN Patient pa ON v.patientId = pa.patientId
 JOIN Prescription_details pd ON p.prescriptionId = pd.prescriptionId
