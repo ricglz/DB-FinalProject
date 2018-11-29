@@ -194,7 +194,7 @@ WHERE CONCAT(fName,lName) LIKE CONCAT('%', nameSearch, '%')
 
 --19. Mostrar las N medicinas mas recetadas de hoy
 --Input: N
-SELECT m.medName, COUNT(pd.prescriptionId)
+SELECT m.medName, COUNT(pd.prescriptionId) AS 'Cantidad'
 FROM Medicament m
 JOIN Prescription_details pd ON m.medId = pd.medId
 JOIN Prescription p ON pd.prescriptionId = p.prescriptionId
