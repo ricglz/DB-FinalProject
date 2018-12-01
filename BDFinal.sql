@@ -2,10 +2,10 @@
 -- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 29, 2018 at 05:11 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Servidor: localhost
+-- Tiempo de generación: 01-12-2018 a las 22:08:07
+-- Versión del servidor: 10.1.34-MariaDB
+-- Versión de PHP: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `BDFinal`
+-- Base de datos: `BDFinal`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `app_info`
+-- Estructura de tabla para la tabla `app_info`
 --
 
 CREATE TABLE `app_info` (
@@ -56,7 +56,7 @@ CREATE TABLE `app_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `app_info`
+-- Volcado de datos para la tabla `app_info`
 --
 
 INSERT INTO `app_info` (`id`, `app_nombre`, `color1`, `color2`, `home_name`, `home_icon`, `button1_name`, `button1_icon`, `button1_show`, `button2_name`, `button2_icon`, `button2_show`, `button3_name`, `button3_icon`, `button3_show`, `button4_name`, `button4_icon`, `button4_show`, `button5_name`, `button5_icon`, `button5_show`, `button6_name`, `button6_icon`, `button6_show`) VALUES
@@ -65,7 +65,7 @@ INSERT INTO `app_info` (`id`, `app_nombre`, `color1`, `color2`, `home_name`, `ho
 -- --------------------------------------------------------
 
 --
--- Table structure for table `app_reporte`
+-- Estructura de tabla para la tabla `app_reporte`
 --
 
 CREATE TABLE `app_reporte` (
@@ -78,7 +78,7 @@ CREATE TABLE `app_reporte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `app_reporte`
+-- Volcado de datos para la tabla `app_reporte`
 --
 
 INSERT INTO `app_reporte` (`id`, `nombre_reporte`, `show_on_app`, `location`, `content`, `icon`) VALUES
@@ -103,7 +103,7 @@ INSERT INTO `app_reporte` (`id`, `nombre_reporte`, `show_on_app`, `location`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Diagnosis`
+-- Estructura de tabla para la tabla `Diagnosis`
 --
 
 CREATE TABLE `Diagnosis` (
@@ -115,7 +115,7 @@ CREATE TABLE `Diagnosis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Diagnosis`
+-- Volcado de datos para la tabla `Diagnosis`
 --
 
 INSERT INTO `Diagnosis` (`dCode`, `dFrequent`, `ICD9CM`, `ICD10CM`, `DSM5`) VALUES
@@ -1079,7 +1079,7 @@ INSERT INTO `Diagnosis` (`dCode`, `dFrequent`, `ICD9CM`, `ICD10CM`, `DSM5`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Diagnosis_details`
+-- Estructura de tabla para la tabla `Diagnosis_details`
 --
 
 CREATE TABLE `Diagnosis_details` (
@@ -1088,7 +1088,7 @@ CREATE TABLE `Diagnosis_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Diagnosis_details`
+-- Volcado de datos para la tabla `Diagnosis_details`
 --
 
 INSERT INTO `Diagnosis_details` (`visitId`, `dCode`) VALUES
@@ -1103,7 +1103,7 @@ INSERT INTO `Diagnosis_details` (`visitId`, `dCode`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Doctor`
+-- Estructura de tabla para la tabla `Doctor`
 --
 
 CREATE TABLE `Doctor` (
@@ -1114,7 +1114,7 @@ CREATE TABLE `Doctor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Doctor`
+-- Volcado de datos para la tabla `Doctor`
 --
 
 INSERT INTO `Doctor` (`doctorId`, `doctorName`, `doctorAddress`, `specialization`) VALUES
@@ -1127,7 +1127,7 @@ INSERT INTO `Doctor` (`doctorId`, `doctorName`, `doctorAddress`, `specialization
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Instance`
+-- Estructura de tabla para la tabla `Instance`
 --
 
 CREATE TABLE `Instance` (
@@ -1137,7 +1137,7 @@ CREATE TABLE `Instance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Instance`
+-- Volcado de datos para la tabla `Instance`
 --
 
 INSERT INTO `Instance` (`instanceId`, `testId`, `visitId`) VALUES
@@ -1155,7 +1155,7 @@ INSERT INTO `Instance` (`instanceId`, `testId`, `visitId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Medicament`
+-- Estructura de tabla para la tabla `Medicament`
 --
 
 CREATE TABLE `Medicament` (
@@ -1168,7 +1168,7 @@ CREATE TABLE `Medicament` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Medicament`
+-- Volcado de datos para la tabla `Medicament`
 --
 
 INSERT INTO `Medicament` (`medId`, `medName`, `ingredientName`, `quantity`, `typeOfDosis`, `laboratory`) VALUES
@@ -1182,7 +1182,7 @@ INSERT INTO `Medicament` (`medId`, `medName`, `ingredientName`, `quantity`, `typ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Patient`
+-- Estructura de tabla para la tabla `Patient`
 --
 
 CREATE TABLE `Patient` (
@@ -1200,7 +1200,7 @@ CREATE TABLE `Patient` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Patient`
+-- Volcado de datos para la tabla `Patient`
 --
 
 INSERT INTO `Patient` (`patientId`, `fName`, `lName`, `sex`, `telephone`, `street`, `zip`, `state`, `city`, `birthDate`, `referral`) VALUES
@@ -1213,7 +1213,7 @@ INSERT INTO `Patient` (`patientId`, `fName`, `lName`, `sex`, `telephone`, `stree
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Prescription`
+-- Estructura de tabla para la tabla `Prescription`
 --
 
 CREATE TABLE `Prescription` (
@@ -1222,7 +1222,7 @@ CREATE TABLE `Prescription` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Prescription`
+-- Volcado de datos para la tabla `Prescription`
 --
 
 INSERT INTO `Prescription` (`prescriptionId`, `visitId`) VALUES
@@ -1236,7 +1236,7 @@ INSERT INTO `Prescription` (`prescriptionId`, `visitId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Prescription_details`
+-- Estructura de tabla para la tabla `Prescription_details`
 --
 
 CREATE TABLE `Prescription_details` (
@@ -1246,7 +1246,7 @@ CREATE TABLE `Prescription_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Prescription_details`
+-- Volcado de datos para la tabla `Prescription_details`
 --
 
 INSERT INTO `Prescription_details` (`prescriptionId`, `medId`, `instructions`) VALUES
@@ -1262,7 +1262,7 @@ INSERT INTO `Prescription_details` (`prescriptionId`, `medId`, `instructions`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Question`
+-- Estructura de tabla para la tabla `Question`
 --
 
 CREATE TABLE `Question` (
@@ -1273,7 +1273,7 @@ CREATE TABLE `Question` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Question`
+-- Volcado de datos para la tabla `Question`
 --
 
 INSERT INTO `Question` (`questionId`, `questionTitle`, `questionInstructions`, `testId`) VALUES
@@ -1291,7 +1291,7 @@ INSERT INTO `Question` (`questionId`, `questionTitle`, `questionInstructions`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Response`
+-- Estructura de tabla para la tabla `Response`
 --
 
 CREATE TABLE `Response` (
@@ -1302,7 +1302,7 @@ CREATE TABLE `Response` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Response`
+-- Volcado de datos para la tabla `Response`
 --
 
 INSERT INTO `Response` (`responseId`, `questionId`, `instanceId`, `value`) VALUES
@@ -1360,7 +1360,7 @@ INSERT INTO `Response` (`responseId`, `questionId`, `instanceId`, `value`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Test`
+-- Estructura de tabla para la tabla `Test`
 --
 
 CREATE TABLE `Test` (
@@ -1369,7 +1369,7 @@ CREATE TABLE `Test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Test`
+-- Volcado de datos para la tabla `Test`
 --
 
 INSERT INTO `Test` (`testId`, `testName`) VALUES
@@ -1379,7 +1379,7 @@ INSERT INTO `Test` (`testId`, `testName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Test_scale`
+-- Estructura de tabla para la tabla `Test_scale`
 --
 
 CREATE TABLE `Test_scale` (
@@ -1390,7 +1390,7 @@ CREATE TABLE `Test_scale` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Test_scale`
+-- Volcado de datos para la tabla `Test_scale`
 --
 
 INSERT INTO `Test_scale` (`lowLimit`, `highLimit`, `testId`, `descriptor`) VALUES
@@ -1407,7 +1407,7 @@ INSERT INTO `Test_scale` (`lowLimit`, `highLimit`, `testId`, `descriptor`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Visit`
+-- Estructura de tabla para la tabla `Visit`
 --
 
 CREATE TABLE `Visit` (
@@ -1420,7 +1420,7 @@ CREATE TABLE `Visit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Visit`
+-- Volcado de datos para la tabla `Visit`
 --
 
 INSERT INTO `Visit` (`visitId`, `patientId`, `doctorId`, `vDate`, `motive`, `resumen`) VALUES
@@ -1433,44 +1433,44 @@ INSERT INTO `Visit` (`visitId`, `patientId`, `doctorId`, `vDate`, `motive`, `res
 (7, 1, 1, '2018-10-31', 'Suspects extreme depression', 'Needs specialist aid');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `app_info`
+-- Indices de la tabla `app_info`
 --
 ALTER TABLE `app_info`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `app_nombre` (`app_nombre`);
 
 --
--- Indexes for table `app_reporte`
+-- Indices de la tabla `app_reporte`
 --
 ALTER TABLE `app_reporte`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nombre_reporte` (`nombre_reporte`);
 
 --
--- Indexes for table `Diagnosis`
+-- Indices de la tabla `Diagnosis`
 --
 ALTER TABLE `Diagnosis`
   ADD PRIMARY KEY (`dCode`);
 
 --
--- Indexes for table `Diagnosis_details`
+-- Indices de la tabla `Diagnosis_details`
 --
 ALTER TABLE `Diagnosis_details`
   ADD PRIMARY KEY (`visitId`,`dCode`),
   ADD KEY `dCode` (`dCode`);
 
 --
--- Indexes for table `Doctor`
+-- Indices de la tabla `Doctor`
 --
 ALTER TABLE `Doctor`
   ADD PRIMARY KEY (`doctorId`);
 
 --
--- Indexes for table `Instance`
+-- Indices de la tabla `Instance`
 --
 ALTER TABLE `Instance`
   ADD PRIMARY KEY (`instanceId`),
@@ -1478,40 +1478,40 @@ ALTER TABLE `Instance`
   ADD KEY `visitId` (`visitId`);
 
 --
--- Indexes for table `Medicament`
+-- Indices de la tabla `Medicament`
 --
 ALTER TABLE `Medicament`
   ADD PRIMARY KEY (`medId`);
 
 --
--- Indexes for table `Patient`
+-- Indices de la tabla `Patient`
 --
 ALTER TABLE `Patient`
   ADD PRIMARY KEY (`patientId`);
 
 --
--- Indexes for table `Prescription`
+-- Indices de la tabla `Prescription`
 --
 ALTER TABLE `Prescription`
   ADD PRIMARY KEY (`prescriptionId`),
   ADD KEY `visitId` (`visitId`);
 
 --
--- Indexes for table `Prescription_details`
+-- Indices de la tabla `Prescription_details`
 --
 ALTER TABLE `Prescription_details`
   ADD PRIMARY KEY (`prescriptionId`,`medId`),
   ADD KEY `medId` (`medId`);
 
 --
--- Indexes for table `Question`
+-- Indices de la tabla `Question`
 --
 ALTER TABLE `Question`
   ADD PRIMARY KEY (`questionId`),
   ADD KEY `testId` (`testId`);
 
 --
--- Indexes for table `Response`
+-- Indices de la tabla `Response`
 --
 ALTER TABLE `Response`
   ADD PRIMARY KEY (`responseId`),
@@ -1519,20 +1519,20 @@ ALTER TABLE `Response`
   ADD KEY `instanceId` (`instanceId`);
 
 --
--- Indexes for table `Test`
+-- Indices de la tabla `Test`
 --
 ALTER TABLE `Test`
   ADD PRIMARY KEY (`testId`);
 
 --
--- Indexes for table `Test_scale`
+-- Indices de la tabla `Test_scale`
 --
 ALTER TABLE `Test_scale`
   ADD PRIMARY KEY (`lowLimit`,`testId`),
   ADD KEY `testId` (`testId`);
 
 --
--- Indexes for table `Visit`
+-- Indices de la tabla `Visit`
 --
 ALTER TABLE `Visit`
   ADD PRIMARY KEY (`visitId`),
@@ -1540,67 +1540,67 @@ ALTER TABLE `Visit`
   ADD KEY `doctorId` (`doctorId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `app_reporte`
+-- AUTO_INCREMENT de la tabla `app_reporte`
 --
 ALTER TABLE `app_reporte`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `Diagnosis_details`
+-- Filtros para la tabla `Diagnosis_details`
 --
 ALTER TABLE `Diagnosis_details`
   ADD CONSTRAINT `diagnosis_details_ibfk_1` FOREIGN KEY (`visitId`) REFERENCES `Visit` (`visitId`),
   ADD CONSTRAINT `diagnosis_details_ibfk_2` FOREIGN KEY (`dCode`) REFERENCES `Diagnosis` (`dCode`);
 
 --
--- Constraints for table `Instance`
+-- Filtros para la tabla `Instance`
 --
 ALTER TABLE `Instance`
   ADD CONSTRAINT `instance_ibfk_1` FOREIGN KEY (`testId`) REFERENCES `Test` (`testId`),
   ADD CONSTRAINT `instance_ibfk_2` FOREIGN KEY (`visitId`) REFERENCES `Visit` (`visitId`);
 
 --
--- Constraints for table `Prescription`
+-- Filtros para la tabla `Prescription`
 --
 ALTER TABLE `Prescription`
   ADD CONSTRAINT `prescription_ibfk_1` FOREIGN KEY (`visitId`) REFERENCES `Visit` (`visitId`);
 
 --
--- Constraints for table `Prescription_details`
+-- Filtros para la tabla `Prescription_details`
 --
 ALTER TABLE `Prescription_details`
   ADD CONSTRAINT `prescription_details_ibfk_1` FOREIGN KEY (`prescriptionId`) REFERENCES `Prescription` (`prescriptionId`),
   ADD CONSTRAINT `prescription_details_ibfk_2` FOREIGN KEY (`medId`) REFERENCES `Medicament` (`medId`);
 
 --
--- Constraints for table `Question`
+-- Filtros para la tabla `Question`
 --
 ALTER TABLE `Question`
   ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`testId`) REFERENCES `Test` (`testId`);
 
 --
--- Constraints for table `Response`
+-- Filtros para la tabla `Response`
 --
 ALTER TABLE `Response`
   ADD CONSTRAINT `response_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Question` (`questionId`),
   ADD CONSTRAINT `response_ibfk_2` FOREIGN KEY (`instanceId`) REFERENCES `Instance` (`instanceId`);
 
 --
--- Constraints for table `Test_scale`
+-- Filtros para la tabla `Test_scale`
 --
 ALTER TABLE `Test_scale`
   ADD CONSTRAINT `test_scale_ibfk_1` FOREIGN KEY (`testId`) REFERENCES `Test` (`testId`);
 
 --
--- Constraints for table `Visit`
+-- Filtros para la tabla `Visit`
 --
 ALTER TABLE `Visit`
   ADD CONSTRAINT `visit_ibfk_1` FOREIGN KEY (`patientId`) REFERENCES `Patient` (`patientId`),
